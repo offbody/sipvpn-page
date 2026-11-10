@@ -1,0 +1,2977 @@
+{
+ "url": "http://127.0.0.1:4173/",
+ "at": "2026-11-10T11:44:45.140Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 9,
+   "filled": [
+    0.44,
+    0.73,
+    0.7,
+    0.6,
+    0.86,
+    0.76,
+    0.64,
+    1,
+    1
+   ],
+   "motion": {
+    "elements": 37,
+    "css": 11,
+    "transitions": 26,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 7268,
+     "screens": 8.1,
+     "words": 468,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 8,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 11,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 5,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Звонки в Россию из любой страны",
+     "words": 6,
+     "chars": 31,
+     "lines": 2,
+     "size": 70.6,
+     "vw": 4.9,
+     "font": "Neue Haas",
+     "weight": 600,
+     "tracking": -0.055,
+     "leading": 0.96,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.38,
+     "top": 255,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Звонки в Россию из любой страны",
+     "words": 6,
+     "lines": 2,
+     "size": 70.6,
+     "font": "Neue Haas"
+    },
+    "headings": [
+     {
+      "text": "Звонки в Россию из любой страны",
+      "words": 6,
+      "chars": 31,
+      "lines": 2,
+      "size": 70.6,
+      "vw": 4.9,
+      "font": "Neue Haas",
+      "weight": 600,
+      "tracking": -0.055,
+      "leading": 0.96,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.38,
+      "top": 255,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Ваш привычный SIP-клиент подключается к российскому relay, а дальше звонок идёт к оператору по корректному маршруту.",
+      "words": 16,
+      "chars": 116,
+      "lines": 3,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Neue Haas",
+      "weight": 500,
+      "tracking": -0.04,
+      "leading": 1.12,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.69,
+      "top": 952,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Подключение за пять минут",
+      "words": 4,
+      "chars": 25,
+      "lines": 2,
+      "size": 70,
+      "vw": 4.9,
+      "font": "Neue Haas",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.54,
+      "top": 1350,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Добавьте SIP-аккаунт",
+      "words": 2,
+      "chars": 20,
+      "lines": 1,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Neue Haas",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.23,
+      "top": 1597,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Получите ключ relay",
+      "words": 3,
+      "chars": 19,
+      "lines": 1,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Neue Haas",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.23,
+      "top": 1814,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Звоните как обычно",
+      "words": 3,
+      "chars": 18,
+      "lines": 1,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Neue Haas",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.23,
+      "top": 1990,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Стабильная SIP-связь",
+      "words": 2,
+      "chars": 20,
+      "lines": 1,
+      "size": 70,
+      "vw": 4.9,
+      "font": "Neue Haas",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.47,
+      "top": 2345,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "00:42",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Neue Haas",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.22,
+      "top": 3089,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "Голос защищён",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 70,
+      "vw": 4.9,
+      "font": "Neue Haas",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.34,
+      "top": 3917,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Старт",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 72,
+      "vw": 5,
+      "font": "Neue Haas",
+      "weight": 400,
+      "tracking": -0.05,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.41,
+      "top": 4481,
+      "tag": "button",
+      "kind": "heading"
+     },
+     {
+      "text": "690 ₽",
+      "words": 2,
+      "chars": 5,
+      "lines": 1,
+      "size": 88,
+      "vw": 6.1,
+      "font": "Neue Haas",
+      "weight": 700,
+      "tracking": -0.06,
+      "leading": 0.94,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.13,
+      "top": 4523,
+      "tag": "strong",
+      "kind": "heading"
+     },
+     {
+      "text": "Про",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 72,
+      "vw": 5,
+      "font": "Neue Haas",
+      "weight": 400,
+      "tracking": -0.05,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.41,
+      "top": 4593,
+      "tag": "button",
+      "kind": "heading"
+     },
+     {
+      "text": "Бизнес",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 72,
+      "vw": 5,
+      "font": "Neue Haas",
+      "weight": 400,
+      "tracking": -0.05,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.41,
+      "top": 4705,
+      "tag": "button",
+      "kind": "heading"
+     },
+     {
+      "text": "Частые вопросы",
+      "words": 2,
+      "chars": 14,
+      "lines": 2,
+      "size": 70,
+      "vw": 4.9,
+      "font": "Neue Haas",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.28,
+      "top": 5137,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Попробуйте SipVPN",
+      "words": 2,
+      "chars": 17,
+      "lines": 1,
+      "size": 70,
+      "vw": 4.9,
+      "font": "Neue Haas",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.59,
+      "top": 6182,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "↗",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 46,
+      "vw": 3.2,
+      "font": "Neue Haas",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.03,
+      "top": 6863,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "SipVPN",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 201.6,
+      "vw": 14,
+      "font": "Neue Haas",
+      "weight": 800,
+      "tracking": -0.07,
+      "leading": 0.8,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.99,
+      "top": 6948,
+      "tag": "div",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 17,
+     "maxLines": 3,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 1,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Neue Haas",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      14,
+      15,
+      17,
+      19,
+      20,
+      21,
+      22,
+      25,
+      27,
+      28,
+      36,
+      46,
+      70,
+      71,
+      72,
+      88,
+      202
+     ],
+     "sizeCount": 18,
+     "notLoaded": [],
+     "body": {
+      "font": "Neue Haas",
+      "size": 17,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.9
+     },
+     "measureChars": 72,
+     "max": {
+      "size": 201.6,
+      "vw": 14,
+      "font": "Neue Haas",
+      "text": "SipVPN"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.07,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f7f9fc",
+     "bodyBgHsl": {
+      "h": 216,
+      "s": 0.45,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#2f73da",
+       "top": 122,
+       "hsl": {
+        "h": 216,
+        "s": 0.7,
+        "l": 0.52
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 1232,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#f7f9fc",
+       "top": 2227,
+       "hsl": {
+        "h": 216,
+        "s": 0.45,
+        "l": 0.98
+       }
+      },
+      {
+       "color": "#092447",
+       "top": 3741,
+       "hsl": {
+        "h": 214,
+        "s": 0.78,
+        "l": 0.16
+       }
+      },
+      {
+       "color": "#0b1f3a",
+       "top": 6948,
+       "hsl": {
+        "h": 214,
+        "s": 0.68,
+        "l": 0.14
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#0b1f3a",
+       "share": 0.46
+      },
+      {
+       "color": "#40536a",
+       "share": 0.35
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.09
+      },
+      {
+       "color": "#b8c9dc",
+       "share": 0.04
+      },
+      {
+       "color": "#e5efff",
+       "share": 0.03
+      }
+     ],
+     "button": {
+      "bg": "#092447",
+      "hsl": {
+       "h": 214,
+       "s": 0.78,
+       "l": 0.16
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 10,
+     "inHero": 3,
+     "radius": 11,
+     "height": 48,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Попробовать бесплатно",
+      "Попробовать бесплатно",
+      "Европа"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 32,
+     "boxRadius": 18,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 6,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 2482
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 6,
+     "fixed": false,
+     "height": 88,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "neue haas"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 7268,
+    "margins": {
+     "left": 100,
+     "right": 100
+    },
+    "sections": [
+     {
+      "sel": "main#top",
+      "tag": "main",
+      "top": 88,
+      "height": 1144,
+      "words": 83,
+      "media": 0,
+      "middle": 3,
+      "heading": {
+       "text": "Звонки в Россию",
+       "size": 71,
+       "tag": "h1"
+      },
+      "left": 100,
+      "right": 55,
+      "textLeft": 100,
+      "textRight": 60,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#how.how.section",
+      "tag": "section",
+      "top": 1232,
+      "height": 995,
+      "words": 70,
+      "media": 0,
+      "middle": 97,
+      "heading": {
+       "text": "Подключение за пять минут",
+       "size": 70,
+       "tag": "h2"
+      },
+      "left": 100,
+      "right": 100,
+      "textLeft": 100,
+      "textRight": 100,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#features.features.section",
+      "tag": "section",
+      "top": 2227,
+      "height": 1514,
+      "words": 155,
+      "media": 0,
+      "middle": 45,
+      "heading": {
+       "text": "Стабильная SIP-связь",
+       "size": 70,
+       "tag": "h2"
+      },
+      "left": 100,
+      "right": 100,
+      "textLeft": 100,
+      "textRight": 100,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#security.security.section",
+      "tag": "section",
+      "top": 3741,
+      "height": 622,
+      "words": 40,
+      "media": 0,
+      "middle": 173,
+      "heading": {
+       "text": "Голос защищён",
+       "size": 70,
+       "tag": "h2"
+      },
+      "left": 100,
+      "right": 128,
+      "textLeft": 100,
+      "textRight": 128,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#pricing.pricing.section",
+      "tag": "section",
+      "top": 4363,
+      "height": 656,
+      "words": 28,
+      "media": 0,
+      "middle": 172,
+      "heading": {
+       "text": "690 ₽",
+       "size": 88,
+       "tag": "strong"
+      },
+      "left": 100,
+      "right": 212,
+      "textLeft": 142,
+      "textRight": 212,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#faq.faq.section",
+      "tag": "section",
+      "top": 5019,
+      "height": 961,
+      "words": 59,
+      "media": 0,
+      "middle": 258,
+      "heading": {
+       "text": "Частые вопросы",
+       "size": 70,
+       "tag": "h2"
+      },
+      "left": 100,
+      "right": 237,
+      "textLeft": 100,
+      "textRight": 237,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#contact.closing.section",
+      "tag": "section",
+      "top": 5980,
+      "height": 723,
+      "words": 23,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Попробуйте SipVPN",
+       "size": 70,
+       "tag": "h2"
+      },
+      "left": 184,
+      "right": 536,
+      "textLeft": 184,
+      "textRight": 558,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.footer",
+      "tag": "footer",
+      "top": 6702,
+      "height": 566,
+      "words": 24,
+      "media": 0,
+      "middle": 134,
+      "heading": {
+       "text": "SipVPN",
+       "size": 202,
+       "tag": "div"
+      },
+      "left": 36,
+      "right": 155,
+      "textLeft": 36,
+      "textRight": 155,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [
+     {
+      "top": 608,
+      "height": 344
+     },
+     {
+      "top": 1072,
+      "height": 276
+     },
+     {
+      "top": 5864,
+      "height": 316
+     }
+    ],
+    "h1s": [
+     {
+      "text": "Звонки в Россию из любой страны",
+      "size": 71,
+      "top": 255,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 100,
+      "n": 8
+     },
+     {
+      "x": 130,
+      "n": 4
+     },
+     {
+      "x": 210,
+      "n": 4
+     },
+     {
+      "x": 547,
+      "n": 4
+     },
+     {
+      "x": 963,
+      "n": 4
+     },
+     {
+      "x": 184,
+      "n": 2
+     },
+     {
+      "x": 638,
+      "n": 1
+     },
+     {
+      "x": 862,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 28,
+    "bodySize": 15,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.27,
+    "voidBox": {
+     "x": 0,
+     "y": 660,
+     "w": 1440,
+     "h": 240
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 9,
+   "filled": [
+    0.62,
+    0.57,
+    0.78,
+    0.92,
+    0.67,
+    0.8,
+    0.6,
+    1,
+    1
+   ],
+   "motion": {
+    "elements": 37,
+    "css": 11,
+    "transitions": 26,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 8448,
+     "screens": 8.3,
+     "words": 464,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 8,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 11,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 5,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Звонки в Россию из любой страны",
+     "words": 6,
+     "chars": 31,
+     "lines": 2,
+     "size": 54,
+     "vw": 7,
+     "font": "Neue Haas",
+     "weight": 600,
+     "tracking": -0.055,
+     "leading": 0.96,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.86,
+     "top": 144,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Звонки в Россию из любой страны",
+     "words": 6,
+     "lines": 2,
+     "size": 54,
+     "font": "Neue Haas"
+    },
+    "headings": [
+     {
+      "text": "Звонки в Россию из любой страны",
+      "words": 6,
+      "chars": 31,
+      "lines": 2,
+      "size": 54,
+      "vw": 7,
+      "font": "Neue Haas",
+      "weight": 600,
+      "tracking": -0.055,
+      "leading": 0.96,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.86,
+      "top": 144,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Ваш привычный SIP-клиент подключается к российскому relay, а дальше звонок идёт к оператору по корректному маршруту.",
+      "words": 16,
+      "chars": 116,
+      "lines": 3,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Neue Haas",
+      "weight": 500,
+      "tracking": -0.04,
+      "leading": 1.12,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.95,
+      "top": 1296,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Подключение за пять минут",
+      "words": 4,
+      "chars": 25,
+      "lines": 2,
+      "size": 42,
+      "vw": 5.5,
+      "font": "Neue Haas",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.52,
+      "top": 1681,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Добавьте SIP-аккаунт",
+      "words": 2,
+      "chars": 20,
+      "lines": 2,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Neue Haas",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.3,
+      "top": 1844,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Получите ключ relay",
+      "words": 3,
+      "chars": 19,
+      "lines": 2,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Neue Haas",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.3,
+      "top": 2083,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Звоните как обычно",
+      "words": 3,
+      "chars": 18,
+      "lines": 2,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Neue Haas",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.3,
+      "top": 2310,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Стабильная SIP-связь",
+      "words": 2,
+      "chars": 20,
+      "lines": 1,
+      "size": 42,
+      "vw": 5.5,
+      "font": "Neue Haas",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.53,
+      "top": 2721,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "00:42",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Neue Haas",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.36,
+      "top": 3938,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "Голос защищён",
+      "words": 2,
+      "chars": 13,
+      "lines": 2,
+      "size": 42,
+      "vw": 5.5,
+      "font": "Neue Haas",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.22,
+      "top": 4708,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Старт",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 48,
+      "vw": 6.3,
+      "font": "Neue Haas",
+      "weight": 400,
+      "tracking": -0.05,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.34,
+      "top": 5380,
+      "tag": "button",
+      "kind": "heading"
+     },
+     {
+      "text": "690 ₽",
+      "words": 2,
+      "chars": 5,
+      "lines": 1,
+      "size": 58,
+      "vw": 7.6,
+      "font": "Neue Haas",
+      "weight": 700,
+      "tracking": -0.06,
+      "leading": 0.94,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.17,
+      "top": 5422,
+      "tag": "strong",
+      "kind": "heading"
+     },
+     {
+      "text": "Про",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 48,
+      "vw": 6.3,
+      "font": "Neue Haas",
+      "weight": 400,
+      "tracking": -0.05,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.34,
+      "top": 5492,
+      "tag": "button",
+      "kind": "heading"
+     },
+     {
+      "text": "Бизнес",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 48,
+      "vw": 6.3,
+      "font": "Neue Haas",
+      "weight": 400,
+      "tracking": -0.05,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.34,
+      "top": 5604,
+      "tag": "button",
+      "kind": "heading"
+     },
+     {
+      "text": "Частые вопросы",
+      "words": 2,
+      "chars": 14,
+      "lines": 2,
+      "size": 42,
+      "vw": 5.5,
+      "font": "Neue Haas",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.34,
+      "top": 6008,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Попробуйте SipVPN",
+      "words": 2,
+      "chars": 17,
+      "lines": 1,
+      "size": 42,
+      "vw": 5.5,
+      "font": "Neue Haas",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.73,
+      "top": 7162,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "↗",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 46,
+      "vw": 6,
+      "font": "Neue Haas",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.06,
+      "top": 8044,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "SipVPN",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 107.5,
+      "vw": 14,
+      "font": "Neue Haas",
+      "weight": 800,
+      "tracking": -0.07,
+      "leading": 0.8,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.97,
+      "top": 8128,
+      "tag": "div",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 17,
+     "maxLines": 3,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 1,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Neue Haas",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      14,
+      15,
+      17,
+      19,
+      20,
+      21,
+      25,
+      27,
+      28,
+      42,
+      46,
+      48,
+      54,
+      58,
+      108
+     ],
+     "sizeCount": 16,
+     "notLoaded": [],
+     "body": {
+      "font": "Neue Haas",
+      "size": 17,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.9
+     },
+     "measureChars": 48,
+     "max": {
+      "size": 107.5,
+      "vw": 14,
+      "font": "Neue Haas",
+      "text": "SipVPN"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.07,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f7f9fc",
+     "bodyBgHsl": {
+      "h": 216,
+      "s": 0.45,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#2f73da",
+       "top": 513,
+       "hsl": {
+        "h": 216,
+        "s": 0.7,
+        "l": 0.52
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 598,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#f7f9fc",
+       "top": 2603,
+       "hsl": {
+        "h": 216,
+        "s": 0.45,
+        "l": 0.98
+       }
+      },
+      {
+       "color": "#092447",
+       "top": 4590,
+       "hsl": {
+        "h": 214,
+        "s": 0.78,
+        "l": 0.16
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#0b1f3a",
+       "share": 0.46
+      },
+      {
+       "color": "#40536a",
+       "share": 0.36
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.1
+      },
+      {
+       "color": "#b8c9dc",
+       "share": 0.04
+      },
+      {
+       "color": "#e5efff",
+       "share": 0.03
+      }
+     ],
+     "button": {
+      "bg": "#092447",
+      "hsl": {
+       "h": 214,
+       "s": 0.78,
+       "l": 0.16
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 10,
+     "inHero": 3,
+     "radius": 11,
+     "height": 48,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Попробовать бесплатно",
+      "Попробовать бесплатно",
+      "Европа"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 32,
+     "boxRadius": 18,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 6,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 2830
+      },
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 7665
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 2,
+     "fixed": false,
+     "height": 88,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "neue haas"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 8448,
+    "margins": {
+     "left": 18,
+     "right": 42
+    },
+    "sections": [
+     {
+      "sel": "main#top",
+      "tag": "main",
+      "top": 88,
+      "height": 1475,
+      "words": 83,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Звонки в Россию",
+       "size": 54,
+       "tag": "h1"
+      },
+      "left": 18,
+      "right": 73,
+      "textLeft": 18,
+      "textRight": 78,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#how.how.section",
+      "tag": "section",
+      "top": 1563,
+      "height": 1041,
+      "words": 70,
+      "media": 0,
+      "middle": 63,
+      "heading": {
+       "text": "Подключение за пять минут",
+       "size": 42,
+       "tag": "h2"
+      },
+      "left": 18,
+      "right": 26,
+      "textLeft": 18,
+      "textRight": 26,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#features.features.section",
+      "tag": "section",
+      "top": 2603,
+      "height": 1987,
+      "words": 155,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Стабильная SIP-связь",
+       "size": 42,
+       "tag": "h2"
+      },
+      "left": 18,
+      "right": 18,
+      "textLeft": 18,
+      "textRight": 18,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#security.security.section",
+      "tag": "section",
+      "top": 4590,
+      "height": 672,
+      "words": 40,
+      "media": 0,
+      "middle": 83,
+      "heading": {
+       "text": "Голос защищён",
+       "size": 42,
+       "tag": "h2"
+      },
+      "left": 36,
+      "right": 83,
+      "textLeft": 36,
+      "textRight": 83,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#pricing.pricing.section",
+      "tag": "section",
+      "top": 5262,
+      "height": 628,
+      "words": 28,
+      "media": 0,
+      "middle": 90,
+      "heading": {
+       "text": "690 ₽",
+       "size": 58,
+       "tag": "strong"
+      },
+      "left": 18,
+      "right": 69,
+      "textLeft": 60,
+      "textRight": 69,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#faq.faq.section",
+      "tag": "section",
+      "top": 5890,
+      "height": 1070,
+      "words": 59,
+      "media": 0,
+      "middle": 177,
+      "heading": {
+       "text": "Частые вопросы",
+       "size": 42,
+       "tag": "h2"
+      },
+      "left": 18,
+      "right": 91,
+      "textLeft": 18,
+      "textRight": 91,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#contact.closing.section",
+      "tag": "section",
+      "top": 6960,
+      "height": 695,
+      "words": 23,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Попробуйте SipVPN",
+       "size": 42,
+       "tag": "h2"
+      },
+      "left": 102,
+      "right": 102,
+      "textLeft": 102,
+      "textRight": 124,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.footer",
+      "tag": "footer",
+      "top": 7655,
+      "height": 794,
+      "words": 24,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Начать звонить",
+       "size": 27,
+       "tag": "span"
+      },
+      "left": 36,
+      "right": 147,
+      "textLeft": 36,
+      "textRight": 147,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [
+     {
+      "top": 960,
+      "height": 336
+     },
+     {
+      "top": 6844,
+      "height": 316
+     }
+    ],
+    "h1s": [
+     {
+      "text": "Звонки в Россию из любой страны",
+      "size": 54,
+      "top": 144,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 18,
+      "n": 10
+     },
+     {
+      "x": 48,
+      "n": 6
+     },
+     {
+      "x": 419,
+      "n": 6
+     },
+     {
+      "x": 36,
+      "n": 2
+     },
+     {
+      "x": 102,
+      "n": 2
+     },
+     {
+      "x": 363,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 28,
+    "bodySize": 15,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.66,
+    0.47,
+    1,
+    0.8,
+    0.79,
+    0.79,
+    0.86,
+    0.74,
+    1,
+    0.76,
+    0.93,
+    1
+   ],
+   "motion": {
+    "elements": 37,
+    "css": 11,
+    "transitions": 26,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 10393,
+     "screens": 12.3,
+     "words": 459,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 8,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 11,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 6,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Звонки в Россию из любой страны",
+     "words": 6,
+     "chars": 31,
+     "lines": 2,
+     "size": 44.1,
+     "vw": 11.3,
+     "font": "Neue Haas",
+     "weight": 600,
+     "tracking": -0.055,
+     "leading": 0.96,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.92,
+     "top": 128,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Звонки в Россию из любой страны",
+     "words": 6,
+     "lines": 2,
+     "size": 44.1,
+     "font": "Neue Haas"
+    },
+    "headings": [
+     {
+      "text": "SipVPN",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Neue Haas",
+      "weight": 800,
+      "tracking": -0.04,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.26,
+      "top": 21,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Звонки в Россию из любой страны",
+      "words": 6,
+      "chars": 31,
+      "lines": 2,
+      "size": 44.1,
+      "vw": 11.3,
+      "font": "Neue Haas",
+      "weight": 600,
+      "tracking": -0.055,
+      "leading": 0.96,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 128,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Ваш привычный SIP-клиент подключается к российскому relay, а дальше звонок идёт к оператору по корректному маршруту.",
+      "words": 16,
+      "chars": 116,
+      "lines": 5,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neue Haas",
+      "weight": 500,
+      "tracking": -0.04,
+      "leading": 1.12,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1316,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Подключение за пять минут",
+      "words": 4,
+      "chars": 25,
+      "lines": 2,
+      "size": 46.8,
+      "vw": 12,
+      "font": "Neue Haas",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1706,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Добавьте SIP-аккаунт",
+      "words": 2,
+      "chars": 20,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "Neue Haas",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1912,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Получите ключ relay",
+      "words": 3,
+      "chars": 19,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "Neue Haas",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2340,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Звоните как обычно",
+      "words": 3,
+      "chars": 18,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "Neue Haas",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2647,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Стабильная SIP-связь",
+      "words": 2,
+      "chars": 20,
+      "lines": 2,
+      "size": 46.8,
+      "vw": 12,
+      "font": "Neue Haas",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 3103,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Российский IP-выход",
+      "words": 2,
+      "chars": 19,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "Neue Haas",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.08,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 3271,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Стабильный голос 24/7",
+      "words": 3,
+      "chars": 21,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "Neue Haas",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.08,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 3721,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Любые софтфоны",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "Neue Haas",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.08,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 4171,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Защита трафика",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "Neue Haas",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.08,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 4621,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Кабинет команды",
+      "words": 2,
+      "chars": 15,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "Neue Haas",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.08,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 5071,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "CRM и WebRTC",
+      "words": 3,
+      "chars": 12,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "Neue Haas",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.08,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 5521,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "00:42",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Neue Haas",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.69,
+      "top": 5793,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "Голос защищён",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 46.8,
+      "vw": 12,
+      "font": "Neue Haas",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 6289,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Старт",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 46,
+      "vw": 11.8,
+      "font": "Neue Haas",
+      "weight": 400,
+      "tracking": -0.05,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 7147,
+      "tag": "button",
+      "kind": "heading"
+     },
+     {
+      "text": "Про",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 46,
+      "vw": 11.8,
+      "font": "Neue Haas",
+      "weight": 400,
+      "tracking": -0.05,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 7223,
+      "tag": "button",
+      "kind": "heading"
+     },
+     {
+      "text": "Бизнес",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 46,
+      "vw": 11.8,
+      "font": "Neue Haas",
+      "weight": 400,
+      "tracking": -0.05,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 7299,
+      "tag": "button",
+      "kind": "heading"
+     },
+     {
+      "text": "690 ₽",
+      "words": 2,
+      "chars": 5,
+      "lines": 1,
+      "size": 62,
+      "vw": 15.9,
+      "font": "Neue Haas",
+      "weight": 700,
+      "tracking": -0.06,
+      "leading": 0.94,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.35,
+      "top": 7435,
+      "tag": "strong",
+      "kind": "heading"
+     },
+     {
+      "text": "Частые вопросы",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 46.8,
+      "vw": 12,
+      "font": "Neue Haas",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 7952,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Попробуйте SipVPN",
+      "words": 2,
+      "chars": 17,
+      "lines": 2,
+      "size": 46.8,
+      "vw": 12,
+      "font": "Neue Haas",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.79,
+      "top": 9047,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "SipVPN",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Neue Haas",
+      "weight": 800,
+      "tracking": -0.04,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.26,
+      "top": 9611,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "↗",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 46,
+      "vw": 11.8,
+      "font": "Neue Haas",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.12,
+      "top": 10125,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "SipVPN",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 97.5,
+      "vw": 25,
+      "font": "Neue Haas",
+      "weight": 800,
+      "tracking": -0.07,
+      "leading": 0.8,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.95,
+      "top": 10203,
+      "tag": "div",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 25,
+     "maxLines": 5,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Neue Haas",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      22,
+      24,
+      25,
+      27,
+      44,
+      46,
+      47,
+      62,
+      98
+     ],
+     "sizeCount": 16,
+     "notLoaded": [],
+     "body": {
+      "font": "Neue Haas",
+      "size": 16,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.9
+     },
+     "measureChars": 45,
+     "max": {
+      "size": 97.5,
+      "vw": 25,
+      "font": "Neue Haas",
+      "text": "SipVPN"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.04,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f7f9fc",
+     "bodyBgHsl": {
+      "h": 216,
+      "s": 0.45,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#2f73da",
+       "top": 533,
+       "hsl": {
+        "h": 216,
+        "s": 0.7,
+        "l": 0.52
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 577,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#f7f9fc",
+       "top": 3015,
+       "hsl": {
+        "h": 216,
+        "s": 0.45,
+        "l": 0.98
+       }
+      },
+      {
+       "color": "#092447",
+       "top": 6201,
+       "hsl": {
+        "h": 214,
+        "s": 0.78,
+        "l": 0.16
+       }
+      },
+      {
+       "color": "#edf3fb",
+       "top": 7407,
+       "hsl": {
+        "h": 214,
+        "s": 0.64,
+        "l": 0.96
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#0b1f3a",
+       "share": 0.46
+      },
+      {
+       "color": "#40536a",
+       "share": 0.36
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.09
+      },
+      {
+       "color": "#b8c9dc",
+       "share": 0.04
+      },
+      {
+       "color": "#e5efff",
+       "share": 0.03
+      }
+     ],
+     "button": {
+      "bg": "#092447",
+      "hsl": {
+       "h": 214,
+       "s": 0.78,
+       "l": 0.16
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 9,
+     "inHero": 2,
+     "radius": 8,
+     "height": 48,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Попробовать бесплатно",
+      "Европа"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 29,
+     "boxRadius": 18,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 1,
+     "fixed": false,
+     "height": 74,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "neue haas"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 10393,
+    "margins": {
+     "left": 16,
+     "right": 16
+    },
+    "sections": [
+     {
+      "sel": "section.hero",
+      "tag": "section",
+      "top": 74,
+      "height": 1074,
+      "words": 63,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Звонки в Россию",
+       "size": 44,
+       "tag": "h1"
+      },
+      "left": 16,
+      "right": 26,
+      "textLeft": 16,
+      "textRight": 26,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.statement.reveal",
+      "tag": "section",
+      "top": 1148,
+      "height": 470,
+      "words": 17,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Ваш привычный SIP-клиент подключается к российском",
+       "size": 24,
+       "tag": "p"
+      },
+      "left": 16,
+      "right": 76,
+      "textLeft": 16,
+      "textRight": 76,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#how.how.section",
+      "tag": "section",
+      "top": 1618,
+      "height": 1397,
+      "words": 70,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Подключение за пять минут",
+       "size": 47,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 20,
+      "textLeft": 16,
+      "textRight": 20,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#features.features.section",
+      "tag": "section",
+      "top": 3015,
+      "height": 3186,
+      "words": 155,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Стабильная SIP-связь",
+       "size": 47,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 51,
+      "textLeft": 16,
+      "textRight": 51,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#security.security.section",
+      "tag": "section",
+      "top": 6201,
+      "height": 858,
+      "words": 40,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Голос защищён",
+       "size": 47,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 33,
+      "textLeft": 24,
+      "textRight": 33,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#pricing.pricing.section",
+      "tag": "section",
+      "top": 7059,
+      "height": 805,
+      "words": 28,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "690 ₽",
+       "size": 62,
+       "tag": "strong"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 44,
+      "textRight": 48,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#faq.faq.section",
+      "tag": "section",
+      "top": 7864,
+      "height": 1047,
+      "words": 59,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Частые вопросы",
+       "size": 47,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 23,
+      "textLeft": 16,
+      "textRight": 23,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#contact.closing.section",
+      "tag": "section",
+      "top": 8911,
+      "height": 671,
+      "words": 23,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Попробуйте SipVPN",
+       "size": 47,
+       "tag": "h2"
+      },
+      "left": 40,
+      "right": 40,
+      "textLeft": 40,
+      "textRight": 70,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.footer",
+      "tag": "footer",
+      "top": 9581,
+      "height": 812,
+      "words": 24,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Начать звонить",
+       "size": 27,
+       "tag": "span"
+      },
+      "left": 30,
+      "right": 55,
+      "textLeft": 30,
+      "textRight": 55,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [
+     {
+      "top": 992,
+      "height": 324
+     }
+    ],
+    "h1s": [
+     {
+      "text": "Звонки в Россию из любой страны",
+      "size": 44,
+      "top": 128,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 36,
+      "n": 16
+     },
+     {
+      "x": 16,
+      "n": 13
+     }
+    ],
+    "leftBlocks": 29,
+    "bodySize": 15,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "18 different font sizes (13, 14, 15, 17, 19, 20, 21, 22, 25, 27, 28, 36, 46, 70, 71, 72, 88, 202).",
+   "fix": "A page needs about five: display, heading, lead, body, small.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "no-real-pictures",
+   "width": 1440,
+   "message": "Only 0 real photograph(s) or clip(s); the rest are interface fragments.",
+   "fix": "Add two or more real pictures of the customer's world from scripts/assets.mjs, not stock of people at laptops."
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "ragged-edges",
+   "width": 1440,
+   "message": "Left-aligned text starts at 8 different lines (100px, 130px, 210px, 547px, 963px, 184px, 638px); the three most used hold only 57% of it.",
+   "fix": "Pick two or three anchor lines from the grid and start every heading and paragraph on one of them."
+  },
+  {
+   "level": "WARN",
+   "id": "card-rows",
+   "width": 768,
+   "message": "2 rows of identical boxed cards.",
+   "fix": "Vary the composition; not every section is a card grid."
+  },
+  {
+   "level": "WARN",
+   "id": "off-centre",
+   "width": 768,
+   "message": "The margins differ: 18px on the left, 42px on the right, at 768px.",
+   "fix": "Put the navigation and the content on one pair of margins; check for padding on one side only, a scrollbar gutter, or a header on another inset than the page."
+  },
+  {
+   "level": "WARN",
+   "id": "statement-length",
+   "width": 390,
+   "message": "1 large-set statement(s) run past 4 lines at 390px: \"Ваш привычный SIP-клиент подключается к …\" → 5 lines at 24px",
+   "fix": "A statement set large is about 30 words. Cut it, or set the rest as ordinary body text."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/user/Documents/ChatGPT/Sip Vpn/sipvpn-site/.taste-skill/inspect4/desktop-fold.jpg",
+   "pages": [
+    "/Users/user/Documents/ChatGPT/Sip Vpn/sipvpn-site/.taste-skill/inspect4/desktop-page-01.jpg",
+    "/Users/user/Documents/ChatGPT/Sip Vpn/sipvpn-site/.taste-skill/inspect4/desktop-page-02.jpg",
+    "/Users/user/Documents/ChatGPT/Sip Vpn/sipvpn-site/.taste-skill/inspect4/desktop-page-03.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/user/Documents/ChatGPT/Sip Vpn/sipvpn-site/.taste-skill/inspect4/tablet-fold.jpg",
+   "pages": [
+    "/Users/user/Documents/ChatGPT/Sip Vpn/sipvpn-site/.taste-skill/inspect4/tablet-page-01.jpg",
+    "/Users/user/Documents/ChatGPT/Sip Vpn/sipvpn-site/.taste-skill/inspect4/tablet-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/user/Documents/ChatGPT/Sip Vpn/sipvpn-site/.taste-skill/inspect4/mobile-fold.jpg",
+   "pages": [
+    "/Users/user/Documents/ChatGPT/Sip Vpn/sipvpn-site/.taste-skill/inspect4/mobile-page-01.jpg",
+    "/Users/user/Documents/ChatGPT/Sip Vpn/sipvpn-site/.taste-skill/inspect4/mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}
