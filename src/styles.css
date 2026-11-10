@@ -946,6 +946,25 @@ a { color: inherit; }
 
 @keyframes hero-in { from { opacity: 0; transform: translateY(22px); } }
 @keyframes stage-in-mobile { from { opacity: 0; transform: translateY(14px); } }
+@keyframes route-node-in { from { opacity: 0; transform: translateY(8px) scale(.92); } }
+@keyframes sip-packet-one {
+  0%, 8% { opacity: 0; transform: translateX(0); }
+  14% { opacity: 1; }
+  43% { opacity: 1; transform: translateX(100%); }
+  48%, 100% { opacity: 0; transform: translateX(100%); }
+}
+@keyframes sip-packet-two {
+  0%, 48% { opacity: 0; transform: translateX(0); }
+  55% { opacity: 1; }
+  88% { opacity: 1; transform: translateX(100%); }
+  94%, 100% { opacity: 0; transform: translateX(100%); }
+}
+@keyframes relay-confirm {
+  0%, 38% { opacity: 0; transform: scale(.82); }
+  48% { opacity: .7; }
+  66%, 100% { opacity: 0; transform: scale(1.55); }
+}
+@keyframes relay-bars { 0%, 100% { transform: scaleY(.72); } 50% { transform: scaleY(1); } }
 @keyframes overlay-in { from { opacity: 0; } }
 @keyframes dialog-in { from { opacity: 0; transform: translateY(18px) scale(.985); } }
 @keyframes stage-reveal { from { opacity: 0; clip-path: inset(0 0 100% 0 round 58px); } to { opacity: 1; clip-path: inset(0 round 58px); } }
@@ -1041,8 +1060,23 @@ a { color: inherit; }
   .region-select-mobile::after { content: ""; position: absolute; top: 50%; right: 18px; width: 8px; height: 8px; border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); pointer-events: none; transform: translateY(-65%) rotate(45deg); }
   .region-select-mobile select { width: 100%; height: 50px; padding: 0 48px 0 16px; border: 1px solid rgba(32, 35, 59, .08); border-radius: 12px; appearance: none; -webkit-appearance: none; background: var(--soft); color: var(--ink); font-size: 14px; font-weight: 700; cursor: pointer; }
   .route-graphic { gap: 6px; margin: 16px 0 0; padding: 0; }
-  .route-line { top: 23px; }
+  .route-line { top: 23px; height: 4px; overflow: visible; border-radius: 999px; background: linear-gradient(90deg, var(--navy) 0 50%, #d8d7d1 50% 100%); }
+  .route-line::before,
+  .route-line::after { display: none; }
+  .route-dot { position: absolute; top: 50%; left: 0; width: 50%; height: 0; display: block; opacity: 0; will-change: transform, opacity; }
+  .route-dot::after { content: ""; position: absolute; top: 0; left: 0; width: 9px; height: 9px; border: 2px solid #fff; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 3px rgba(201, 237, 111, .25), 0 2px 8px rgba(32, 35, 59, .2); transform: translate(-50%, -50%); }
+  .route-dot--one { animation: sip-packet-one 3.2s var(--ease-in-out) .35s infinite; }
+  .route-dot--two { left: 50%; animation: sip-packet-two 3.2s var(--ease-in-out) .35s infinite; }
+  .route-stop { animation: route-node-in .5s var(--ease-out) both; }
+  .route-stop:nth-of-type(2) { animation-delay: .08s; }
+  .route-stop:nth-of-type(3) { animation-delay: .22s; }
+  .route-stop:nth-of-type(4) { animation-delay: .36s; }
   .route-stop > span:first-child { width: 42px; height: 42px; margin-bottom: 6px; }
+  .route-stop--active > span:first-child { box-shadow: 0 0 0 7px rgba(201, 237, 111, .18); }
+  .route-stop--active > span:first-child::after { content: ""; position: absolute; inset: -5px; border: 2px solid var(--lime); border-radius: 50%; opacity: 0; animation: relay-confirm 3.2s var(--ease-out) .35s infinite; }
+  .route-stop--active .route-signal i { transform-origin: bottom; animation: relay-bars 1.2s var(--ease-in-out) infinite; }
+  .route-stop--active .route-signal i:nth-child(2) { animation-delay: -.4s; }
+  .route-stop--active .route-signal i:nth-child(3) { animation-delay: -.8s; }
   .route-stop strong { font-size: 11px; }
   .route-stop small { font-size: 10px; }
   .relay-summary > h2 { margin-top: 8px; font-size: 27px; }
@@ -1200,6 +1234,10 @@ a { color: inherit; }
   .lead-overlay,
   .lead-dialog { animation: reduced-fade 200ms ease both !important; }
   .route-line::after,
+  .route-dot,
+  .route-stop,
+  .route-stop--active > span:first-child::after,
+  .route-stop--active .route-signal i,
   .compact-route i::after,
   .console-route i::after,
   .closing-route-path > b::after,

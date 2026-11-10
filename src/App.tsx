@@ -145,7 +145,7 @@ function RelayPanel({ onLead }: { onLead: OpenLeadForm }) {
             {regions.map((item, index) => <option key={item.id} value={index}>{item.label}</option>)}
           </select>
         </label>
-        <RouteGraphic regionIndex={regionIndex} />
+        <RouteGraphic key={region.id} regionIndex={regionIndex} />
       </div>
       <div className="relay-summary">
         <span className="ui-label">Выбрано:</span>
