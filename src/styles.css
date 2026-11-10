@@ -865,8 +865,9 @@ a { color: inherit; }
   }
 
   .hero-stage {
-    flex: 1;
+    flex: none;
     min-height: 0;
+    margin-top: auto;
     align-items: flex-end;
     padding-bottom: 0;
     border-radius: 58px 58px 0 0;
