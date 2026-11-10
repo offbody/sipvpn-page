@@ -52,10 +52,11 @@ function Header() {
             {item.label}
           </a>
         ))}
+        <a className="nav-mobile-cta" href="#how" onClick={() => setOpen(false)}>Как это работает?</a>
       </nav>
       <a className="button header-cta header-how" href="#how">Как это работает?</a>
       <button
-        className="menu-button"
+        className={`menu-button ${open ? 'is-open' : ''}`}
         type="button"
         aria-label={open ? 'Закрыть меню' : 'Открыть меню'}
         aria-expanded={open}
@@ -123,7 +124,7 @@ function RelayPanel({ onLead }: { onLead: OpenLeadForm }) {
             <span className="ui-label">Конфигуратор подключения</span>
             <h2>Откуда Вы звоните</h2>
           </div>
-          <span className="status"><i /> Серверы SipVPN в сети</span>
+          <span className="status"><i /><span className="status-full">Серверы SipVPN в сети</span><span className="status-short">В сети</span></span>
         </div>
         <div className="region-selector" role="group" aria-label="Выберите регион">
           {regions.map((item, index) => (
@@ -240,6 +241,24 @@ function Hero({ onLead }: { onLead: OpenLeadForm }) {
 }
 
 function HowItWorks() {
+  const [copied, setCopied] = useState(false);
+  const copiedTimer = useRef<number | null>(null);
+
+  useEffect(() => () => {
+    if (copiedTimer.current) window.clearTimeout(copiedTimer.current);
+  }, []);
+
+  const copyRelayKey = async () => {
+    try {
+      await navigator.clipboard.writeText('ru-mow-7F3A-82C1');
+      setCopied(true);
+      if (copiedTimer.current) window.clearTimeout(copiedTimer.current);
+      copiedTimer.current = window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      setCopied(false);
+    }
+  };
+
   const rows = [
     {
       title: 'Добавьте SIP-аккаунт',
@@ -249,7 +268,7 @@ function HowItWorks() {
     {
       title: 'Получите ключ relay',
       text: 'Сервис подготовит адрес узла и параметры подключения.',
-      fragment: <div className="key-card" data-ui><span>Ключ подключения</span><strong>ru-mow-7F3A-82C1</strong><button type="button" onClick={() => navigator.clipboard?.writeText('ru-mow-7F3A-82C1')}>Копировать</button></div>,
+      fragment: <div className="key-card" data-ui><span>Ключ подключения</span><strong>ru-mow-7F3A-82C1</strong><button type="button" className={copied ? 'is-copied' : ''} onClick={copyRelayKey} aria-live="polite">{copied ? 'Скопировано' : 'Копировать'}</button></div>,
     },
     {
       title: 'Звоните как обычно',
