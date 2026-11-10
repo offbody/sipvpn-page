@@ -851,6 +851,7 @@ a { color: inherit; }
 
 @keyframes hero-in { from { opacity: 0; transform: translateY(22px); } }
 @keyframes stage-reveal { from { opacity: 0; clip-path: inset(0 0 100% 0 round 58px); } to { opacity: 1; clip-path: inset(0 round 58px); } }
+@keyframes stage-reveal-flat-bottom { from { opacity: 0; clip-path: inset(0 0 100% 0 round 58px 58px 0 0); } to { opacity: 1; clip-path: inset(0 round 58px 58px 0 0); } }
 @keyframes signal-pulse { 50% { opacity: .35; transform: scale(.72); } }
 @keyframes route-travel { from { left: 0; } to { left: calc(100% - 8px); } }
 @keyframes mini-route { from { left: -22px; } to { left: 100%; } }
@@ -859,18 +860,23 @@ a { color: inherit; }
 @media (min-width: 1081px) {
   .hero {
     min-height: calc(100svh - 72px);
-    padding-bottom: 0;
-    display: flex;
-    flex-direction: column;
+    padding: 0;
+    display: grid;
+    grid-template-rows: minmax(max-content, 1fr) auto;
+  }
+
+  .hero-copy {
+    align-self: center;
+    margin: 0 auto;
+    padding: 24px 0;
   }
 
   .hero-stage {
-    flex: none;
     min-height: 0;
-    margin-top: auto;
     align-items: flex-end;
     padding-bottom: 0;
     border-radius: 58px 58px 0 0;
+    animation-name: stage-reveal-flat-bottom;
   }
 
   .relay-panel {
