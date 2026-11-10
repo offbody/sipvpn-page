@@ -7,3 +7,10 @@ dist
 .DS_Store
 *.tsbuildinfo
 .taste-skill/inspect
+.taste-skill/before/
+.taste-skill/build.json
+.taste-skill/chrome-*/
+.taste-skill/polish-251/
+.taste-skill/check-251/
+.taste-skill/gate/
+.taste-skill/layout-251/

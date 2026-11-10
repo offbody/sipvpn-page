@@ -1,9 +1,9 @@
-import { FormEvent, useEffect, useMemo, useState } from 'react';
+import { useState } from 'react';
 import { faq, features, nav, plans, regions } from './content';
 
 function Logo({ inverse = false }: { inverse?: boolean }) {
   return (
-    <a className={`logo ${inverse ? 'logo--inverse' : ''}`} href="#top" aria-label="SipVPN — на главную">
+    <a className={`logo ${inverse ? 'logo--inverse' : ''}`} href="#top" aria-label="SipVPN, на главную">
       <span className="logo-mark" aria-hidden="true">
         <span />
         <span />
@@ -18,6 +18,7 @@ function Header() {
 
   return (
     <header className="header">
+      <a className="skip-link" href="#top">К содержанию</a>
       <Logo />
       <nav className={`nav ${open ? 'nav--open' : ''}`} aria-label="Основная навигация">
         {nav.map((item) => (
@@ -44,7 +45,7 @@ function Header() {
 function RouteGraphic({ regionIndex }: { regionIndex: number }) {
   const region = regions[regionIndex];
   return (
-    <div className="route-graphic" aria-label={`Маршрут ${region.place} — ${region.node} — SIP-провайдер`}>
+    <div className="route-graphic" aria-label={`Маршрут: ${region.place}, ${region.node}, SIP-провайдер`}>
       <div className="route-line" aria-hidden="true">
         <span className="route-dot route-dot--one" />
         <span className="route-dot route-dot--two" />
@@ -178,9 +179,9 @@ function MiniFragment({ kind }: { kind: (typeof features)[number]['kind'] }) {
 
 function Hero() {
   return (
-    <main id="top">
+    <>
       <section className="hero">
-        <div className="hero-copy">
+        <div className="hero-copy" data-enter>
           <h1>Звонки в Россию<br />из любой страны</h1>
           <p>SipVPN даёт российский IP-выход для SIP-телефонии и CRM, когда вы работаете за рубежом.</p>
         </div>
@@ -189,10 +190,11 @@ function Hero() {
         </div>
       </section>
 
-      <section className="statement reveal" aria-label="Как работает маршрут">
+      <section className="statement" aria-label="Как работает маршрут">
+        <span>Один маршрут</span>
         <p>SIP-клиент подключается к российскому relay, а тот направляет звонок оператору.</p>
       </section>
-    </main>
+    </>
   );
 }
 
@@ -218,11 +220,11 @@ function HowItWorks() {
   return (
     <section className="how section" id="how">
       <div className="section-shell">
-        <div className="section-heading reveal"><h2>Подключение за пять минут</h2><p>Три действия — и SIP снова работает за границей.</p></div>
+        <div className="section-heading"><h2>Подключение за пять минут</h2><p>Три действия, и SIP снова работает за границей.</p></div>
         <div className="how-list">
-          {rows.map((row) => (
-            <article className="how-row reveal" key={row.title}>
-              <div><h3>{row.title}</h3><p>{row.text}</p></div>
+          {rows.map((row, index) => (
+            <article className="how-row" key={row.title}>
+              <div className="how-copy"><span className="step-number">0{index + 1}</span><h3>{row.title}</h3><p>{row.text}</p></div>
               {row.fragment}
             </article>
           ))}
@@ -236,17 +238,17 @@ function Features() {
   return (
     <section className="features section" id="features">
       <div className="section-shell">
-        <div className="section-heading reveal"><h2>Стабильная SIP-связь</h2></div>
+        <div className="section-heading"><h2>Стабильная SIP-связь</h2><p>Не универсальный VPN, а маршрут, собранный вокруг голосового трафика.</p></div>
         <div className="feature-grid">
           {features.map((feature, index) => (
-            <article className={`feature-cell feature-cell--${index + 1} reveal`} key={feature.title}>
+            <article className={`feature-cell feature-cell--${index + 1}`} key={feature.title}>
               <div className="feature-copy"><h3>{feature.title}</h3><p>{feature.text}</p></div>
               <MiniFragment kind={feature.kind} />
             </article>
           ))}
         </div>
       </div>
-      <div className="compatibility reveal" aria-label="Совместимость">
+      <div className="compatibility" aria-label="Совместимость">
         <span>Работает с</span>
         {['МТС', 'Билайн', 'TTK', 'Квантум', 'Яндекс', 'Zvonok', 'Asterisk'].map((name) => <strong key={name}>{name}</strong>)}
       </div>
@@ -258,12 +260,12 @@ function Security() {
   return (
     <section className="security section" id="security">
       <div className="security-inner section-shell">
-        <div className="security-copy reveal">
+        <div className="security-copy">
           <h2>Голос защищён</h2>
           <p>Трафик защищён шифрованием и изолирован в выделенном контуре. Маршрут контролируется от клиента до российского relay.</p>
           <a className="button button--light" href="#faq">Вопросы о безопасности</a>
         </div>
-        <div className="security-console reveal" data-ui>
+        <div className="security-console" data-ui>
           <div className="console-head"><span>Защита соединения</span><span className="status status--light"><i /> Активна</span></div>
           {[
             ['Голосовой поток', 'SRTP'],
@@ -285,7 +287,7 @@ function Pricing() {
   return (
     <section className="pricing section" id="pricing">
       <div className="section-shell pricing-layout">
-        <div className="plan-list reveal" role="tablist" aria-label="Тарифы SipVPN">
+        <div className="plan-list" role="tablist" aria-label="Тарифы SipVPN">
           <h2 className="sr-only">Тарифы</h2>
           {plans.map((item, index) => (
             <button
@@ -300,7 +302,7 @@ function Pricing() {
             </button>
           ))}
         </div>
-        <div className="plan-stage reveal" role="tabpanel">
+        <div className="plan-stage" role="tabpanel">
           <div className="plan-price"><strong>{plan.price}</strong><span>{plan.period}</span></div>
           <p>{plan.summary}</p>
           <a className="button button--dark" href="#contact">{plan.button}</a>
@@ -315,10 +317,10 @@ function Faq() {
   return (
     <section className="faq section" id="faq">
       <div className="section-shell faq-layout">
-        <h2 className="reveal">Частые вопросы</h2>
+        <h2>Частые вопросы</h2>
         <div className="faq-list">
           {faq.map((item, index) => (
-            <details className="reveal" key={item.q} name="faq" open={index === 0}>
+            <details key={item.q} name="faq" open={index === 0}>
               <summary><span>{item.q}</span><i aria-hidden="true" /></summary>
               <p>{item.a}</p>
             </details>
@@ -330,25 +332,15 @@ function Faq() {
 }
 
 function Closing() {
-  const [submitted, setSubmitted] = useState(false);
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
     <section className="closing section" id="contact">
-      <div className="section-shell closing-inner reveal">
+      <div className="section-shell closing-inner">
         <h2>Попробуйте SipVPN</h2>
         <p>14 дней бесплатно. Карта не нужна. Настройка занимает около пяти минут.</p>
-        <form onSubmit={onSubmit} className="signup-form">
-          <label htmlFor="signup-email">Рабочая почта</label>
-          <div>
-            <input id="signup-email" name="email" type="email" placeholder="name@company.com" required />
-            <button type="submit">Запросить доступ</button>
-          </div>
-          <span aria-live="polite">{submitted ? 'Форма готова. Подключите её к вашей CRM перед запуском.' : 'Мы пришлём инструкцию по подключению.'}</span>
-        </form>
+        <div className="closing-actions">
+          <a className="button button--dark" href="#pricing">Попробовать бесплатно</a>
+          <a className="text-link" href="#how">Как это работает</a>
+        </div>
       </div>
     </section>
   );
@@ -357,11 +349,16 @@ function Closing() {
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-grid">
-        <div className="footer-brand"><Logo inverse /><p>Российский SIP relay для связи из любой страны.</p><span>© 2026 SipVPN</span></div>
-        <div className="footer-nav"><strong>Продукт</strong>{nav.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}</div>
-        <div className="footer-note"><strong>Поддержка</strong><a href="#contact">Подключение</a><a href="#faq">Помощь</a><a href="#security">Безопасность</a></div>
-        <a className="footer-action" href="#pricing"><span>Начать звонить</span><b aria-hidden="true">↗</b></a>
+      <div className="footer-shell">
+        <div className="footer-top">
+          <div className="footer-brand"><Logo inverse /><p>Российский SIP relay для связи из любой страны.</p></div>
+          <a className="footer-action" href="#pricing"><span>Попробовать бесплатно</span><b aria-hidden="true">↗</b></a>
+        </div>
+        <div className="footer-directory">
+          <span>© 2026 SipVPN</span>
+          <div className="footer-nav">{nav.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}</div>
+          <a href="#top">Наверх ↑</a>
+        </div>
         <div className="footer-wordmark" aria-hidden="true">SipVPN</div>
       </div>
     </footer>
@@ -369,35 +366,18 @@ function Footer() {
 }
 
 export default function App() {
-  useEffect(() => {
-    const elements = Array.from(document.querySelectorAll<HTMLElement>('.reveal'));
-    const observer = new IntersectionObserver(
-      (entries) => entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          (entry.target as HTMLElement).classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      }),
-      { threshold: 0.14 },
-    );
-    elements.forEach((element) => observer.observe(element));
-    return () => observer.disconnect();
-  }, []);
-
-  const sections = useMemo(() => [
-    <Hero key="hero" />,
-    <HowItWorks key="how" />,
-    <Features key="features" />,
-    <Security key="security" />,
-    <Pricing key="pricing" />,
-    <Faq key="faq" />,
-    <Closing key="closing" />,
-  ], []);
-
   return (
     <>
       <Header />
-      {sections}
+      <main id="top">
+        <Hero />
+        <HowItWorks />
+        <Features />
+        <Security />
+        <Pricing />
+        <Faq />
+        <Closing />
+      </main>
       <Footer />
     </>
   );
