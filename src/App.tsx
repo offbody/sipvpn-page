@@ -76,8 +76,8 @@ function RelayPanel() {
     <div className="relay-panel" data-ui>
       <div className="relay-head">
         <div>
-          <span className="ui-label">Маршрут звонка</span>
-          <h2>Подключение защищено</h2>
+          <span className="ui-label">Конфигуратор подключения</span>
+          <h2>Маршрут звонка</h2>
         </div>
         <span className="status"><i /> В сети</span>
       </div>
@@ -99,6 +99,17 @@ function RelayPanel() {
         <div><span>Ожидаемая задержка</span><strong>{region.latency}</strong></div>
         <div><span>Протокол</span><strong>SRTP / DTLS</strong></div>
         <div><span>Российский IP</span><strong>Активен</strong></div>
+      </div>
+      <div className="relay-order">
+        <div className="relay-choice">
+          <span>Вы выбрали</span>
+          <strong>{region.label} → {region.node}</strong>
+        </div>
+        <div className="relay-actions">
+          <a className="button button--dark" href="#pricing">Попробовать бесплатно</a>
+          <a className="text-link" href="#how">Как это работает</a>
+        </div>
+        <span className="relay-note">14 дней бесплатно · карта не нужна · настройка за 5 минут</span>
       </div>
     </div>
   );
@@ -172,11 +183,6 @@ function Hero() {
         <div className="hero-copy">
           <h1>Звонки в Россию<br />из любой страны</h1>
           <p>SipVPN даёт российский IP-выход для SIP-телефонии и CRM, когда вы работаете за рубежом.</p>
-          <div className="hero-actions">
-            <a className="button button--dark" href="#pricing">Попробовать бесплатно</a>
-            <a className="text-link" href="#how">Как это работает</a>
-          </div>
-          <span className="hero-note">14 дней бесплатно · карта не нужна · настройка за 5 минут</span>
         </div>
         <div className="hero-stage" aria-label="Интерактивный маршрут SipVPN">
           <RelayPanel />
@@ -184,7 +190,7 @@ function Hero() {
       </section>
 
       <section className="statement reveal" aria-label="Как работает маршрут">
-        <p>Ваш привычный SIP-клиент подключается к российскому relay, а дальше звонок идёт к оператору по корректному маршруту.</p>
+        <p>SIP-клиент подключается к российскому relay, а тот направляет звонок оператору.</p>
       </section>
     </main>
   );

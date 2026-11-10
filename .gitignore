@@ -1,5 +1,8 @@
 node_modules
 dist
+.taste-skill/after-human/
+.taste-skill/final-human/
+.taste-skill/final/
 .DS_Store
 *.tsbuildinfo
 .taste-skill/inspect
