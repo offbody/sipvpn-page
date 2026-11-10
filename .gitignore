@@ -3,6 +3,7 @@ dist
 .taste-skill/after-human/
 .taste-skill/final-human/
 .taste-skill/final/
+.secrets/
 .DS_Store
 *.tsbuildinfo
 .taste-skill/inspect
