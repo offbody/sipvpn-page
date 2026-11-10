@@ -4,10 +4,7 @@ import { faq, features, nav, plans, regions } from './content';
 function Logo({ inverse = false }: { inverse?: boolean }) {
   return (
     <a className={`logo ${inverse ? 'logo--inverse' : ''}`} href="#top" aria-label="SipVPN, на главную">
-      <span className="logo-mark" aria-hidden="true">
-        <span />
-        <span />
-      </span>
+      <span className="logo-mark" aria-hidden="true" />
       <span>SipVPN</span>
     </a>
   );
