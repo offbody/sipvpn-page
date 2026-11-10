@@ -6,10 +6,11 @@ export const nav = [
 ];
 
 export const regions = [
-  { id: 'eu', label: 'Европа', place: 'Варшава', latency: '150–180 мс', node: 'Москва' },
+  { id: 'eu', label: 'Европа', place: 'Варшава', latency: '150–180 мс', node: 'Новосибирск' },
   { id: 'asia', label: 'Азия', place: 'Бангкок', latency: '190–230 мс', node: 'Новосибирск' },
   { id: 'me', label: 'Ближний Восток', place: 'Дубай', latency: '160–200 мс', node: 'Москва' },
   { id: 'americas', label: 'Америка', place: 'Нью-Йорк', latency: '210–250 мс', node: 'Санкт-Петербург' },
+  { id: 'australia', label: 'Австралия', place: 'Сидней', latency: '230–280 мс', node: 'Владивосток' },
 ] as const;
 
 export const features = [

@@ -39,7 +39,7 @@ function Logo({ inverse = false }: { inverse?: boolean }) {
   );
 }
 
-function Header({ onLead }: { onLead: OpenLeadForm }) {
+function Header() {
   const [open, setOpen] = useState(false);
 
   return (
@@ -53,7 +53,7 @@ function Header({ onLead }: { onLead: OpenLeadForm }) {
           </a>
         ))}
       </nav>
-      <button className="button button--dark header-cta" type="button" onClick={() => onLead('Шапка сайта')}>Попробовать бесплатно</button>
+      <a className="button header-cta header-how" href="#how">Как это работает?</a>
       <button
         className="menu-button"
         type="button"
@@ -71,14 +71,14 @@ function Header({ onLead }: { onLead: OpenLeadForm }) {
 function RouteGraphic({ regionIndex }: { regionIndex: number }) {
   const region = regions[regionIndex];
   return (
-    <div className="route-graphic" aria-label={`Маршрут: ${region.place}, ${region.node}, SIP-провайдер`}>
+    <div className="route-graphic" aria-label={`Маршрут: ${region.label}, ${region.node}, SIP-провайдер`}>
       <div className="route-line" aria-hidden="true">
         <span className="route-dot route-dot--one" />
         <span className="route-dot route-dot--two" />
       </div>
       <div className="route-stop">
         <span className="route-pin" aria-hidden="true" />
-        <strong>{region.place}</strong>
+        <strong>{region.label}</strong>
         <small>Ваш SIP-клиент</small>
       </div>
       <div className="route-stop route-stop--active">
@@ -101,42 +101,41 @@ function RelayPanel({ onLead }: { onLead: OpenLeadForm }) {
 
   return (
     <div className="relay-panel" data-ui>
-      <div className="relay-head">
-        <div>
-          <span className="ui-label">Конфигуратор подключения</span>
-          <h2>Маршрут звонка</h2>
+      <div className="relay-picker">
+        <div className="relay-head">
+          <div>
+            <span className="ui-label">Конфигуратор подключения</span>
+            <h2>Откуда Вы звоните</h2>
+          </div>
+          <span className="status"><i /> Серверы SipVPN в сети</span>
         </div>
-        <span className="status"><i /> В сети</span>
-      </div>
-      <RouteGraphic regionIndex={regionIndex} />
-      <div className="region-selector" role="group" aria-label="Выберите регион">
-        {regions.map((item, index) => (
-          <button
-            key={item.id}
-            className={index === regionIndex ? 'is-active' : ''}
-            type="button"
-            onClick={() => setRegionIndex(index)}
-            aria-pressed={index === regionIndex}
-          >
-            {item.label}
-          </button>
-        ))}
-      </div>
-      <div className="relay-metrics">
-        <div><span>Ожидаемая задержка</span><strong>{region.latency}</strong></div>
-        <div><span>Протокол</span><strong>SRTP / DTLS</strong></div>
-        <div><span>Российский IP</span><strong>Активен</strong></div>
-      </div>
-      <div className="relay-order">
-        <div className="relay-choice">
-          <span>Вы выбрали</span>
-          <strong>{region.label} → {region.node}</strong>
+        <div className="region-selector" role="group" aria-label="Выберите регион">
+          {regions.map((item, index) => (
+            <button
+              key={item.id}
+              className={index === regionIndex ? 'is-active' : ''}
+              type="button"
+              onClick={() => setRegionIndex(index)}
+              aria-pressed={index === regionIndex}
+            >
+              {item.label}
+            </button>
+          ))}
         </div>
-        <div className="relay-actions">
-          <button className="button button--dark" type="button" onClick={() => onLead(`Маршрут: ${region.label} → ${region.node}`)}>Попробовать бесплатно</button>
-          <a className="text-link" href="#how">Как это работает</a>
+        <RouteGraphic regionIndex={regionIndex} />
+      </div>
+      <div className="relay-summary">
+        <span className="ui-label">Выбрано:</span>
+        <h2>{region.label} <span aria-hidden="true">→</span> {region.node}</h2>
+        <dl className="relay-summary-list">
+          <div><dt>Задержка:</dt><dd>{region.latency}</dd></div>
+          <div><dt>Протокол:</dt><dd>SRTP / DTLS</dd></div>
+          <div><dt>Российский IP:</dt><dd>Активен</dd></div>
+        </dl>
+        <div className="relay-summary-action">
+          <button className="button button--dark" type="button" onClick={() => onLead(`Маршрут: ${region.label} → ${region.node}`)}>Подключить SipVPN бесплатно</button>
+          <span>14 дней бесплатно · карта не нужна</span>
         </div>
-        <span className="relay-note">14 дней бесплатно · карта не нужна · настройка за 5 минут</span>
       </div>
     </div>
   );
@@ -552,7 +551,7 @@ export default function App() {
 
   return (
     <>
-      <Header onLead={openLeadForm} />
+      <Header />
       <main id="top">
         <Hero onLead={openLeadForm} />
         <HowItWorks />
