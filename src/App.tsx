@@ -139,6 +139,12 @@ function RelayPanel({ onLead }: { onLead: OpenLeadForm }) {
             </button>
           ))}
         </div>
+        <label className="region-select-mobile">
+          <span className="sr-only">Выберите регион</span>
+          <select value={regionIndex} onChange={(event) => selectRegion(Number(event.target.value))}>
+            {regions.map((item, index) => <option key={item.id} value={index}>{item.label}</option>)}
+          </select>
+        </label>
         <RouteGraphic regionIndex={regionIndex} />
       </div>
       <div className="relay-summary">

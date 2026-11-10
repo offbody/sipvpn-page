@@ -401,6 +401,7 @@ a { color: inherit; }
 
 .region-selector button.is-active { background: var(--lime); color: var(--ink); }
 .region-selector button:active { transform: scale(.96); }
+.region-select-mobile { display: none; }
 
 .relay-summary > h2 { margin: 14px 0 0; font-size: clamp(28px, 2.7vw, 40px); line-height: 1.08; letter-spacing: -.045em; }
 .relay-summary > h2 span { display: inline-block; margin: 0 .28em; font-weight: 400; }
@@ -1035,10 +1036,10 @@ a { color: inherit; }
   .relay-head .status { max-width: none; min-height: 28px; padding: 5px 9px; font-size: 10px; line-height: 1; }
   .relay-head .status-full { display: none; }
   .relay-head .status-short { display: inline; white-space: nowrap; }
-  .region-selector { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px; margin-top: 14px; padding: 4px; border-radius: 12px; }
-  .region-selector button { grid-column: span 2; min-height: 42px; padding: 0 6px; border-radius: 9px; font-size: 10px; line-height: 1.1; }
-  .region-selector button:nth-child(4),
-  .region-selector button:nth-child(5) { grid-column: span 3; }
+  .region-selector { display: none; }
+  .region-select-mobile { position: relative; display: block; margin-top: 14px; }
+  .region-select-mobile::after { content: ""; position: absolute; top: 50%; right: 18px; width: 8px; height: 8px; border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); pointer-events: none; transform: translateY(-65%) rotate(45deg); }
+  .region-select-mobile select { width: 100%; height: 50px; padding: 0 48px 0 16px; border: 1px solid rgba(32, 35, 59, .08); border-radius: 12px; appearance: none; -webkit-appearance: none; background: var(--soft); color: var(--ink); font-size: 14px; font-weight: 700; cursor: pointer; }
   .route-graphic { gap: 6px; margin: 16px 0 0; padding: 0; }
   .route-line { top: 23px; }
   .route-stop > span:first-child { width: 42px; height: 42px; margin-bottom: 6px; }
@@ -1162,7 +1163,7 @@ a { color: inherit; }
   .relay-picker,
   .relay-summary { padding: 16px; border-radius: 15px; }
   .relay-head h2 { font-size: 21px; }
-  .region-selector button { font-size: 9px; }
+  .region-select-mobile select { height: 48px; }
   .route-stop strong { font-size: 10px; }
   .route-stop small { font-size: 9px; }
   .relay-summary > h2 { font-size: 26px; }
