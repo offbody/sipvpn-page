@@ -78,7 +78,14 @@ function RouteGraphic({ regionIndex }: { regionIndex: number }) {
         <span className="route-dot route-dot--two" />
       </div>
       <div className="route-stop">
-        <span className="route-pin" aria-hidden="true" />
+        <span className="route-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 14v-2a8 8 0 0 1 16 0v2" />
+            <path d="M4 14h2a2 2 0 0 1 2 2v4H6a2 2 0 0 1-2-2v-4Z" />
+            <path d="M20 14h-2a2 2 0 0 0-2 2v4h2a2 2 0 0 0 2-2v-4Z" />
+            <path d="M16 20c-.8 1-2 1.5-3.5 1.5H11" />
+          </svg>
+        </span>
         <strong>{region.label}</strong>
         <small>Ваш SIP-клиент</small>
       </div>
@@ -88,7 +95,13 @@ function RouteGraphic({ regionIndex }: { regionIndex: number }) {
         <small>SipVPN relay</small>
       </div>
       <div className="route-stop">
-        <span className="route-phone" aria-hidden="true" />
+        <span className="route-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <rect x="4" y="4" width="16" height="6" rx="2" />
+            <rect x="4" y="14" width="16" height="6" rx="2" />
+            <path d="M8 7h.01M12 7h4M8 17h.01M12 17h4" />
+          </svg>
+        </span>
         <strong>Россия</strong>
         <small>SIP-провайдер</small>
       </div>
