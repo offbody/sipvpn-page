@@ -944,6 +944,7 @@ a { color: inherit; }
 }
 
 @keyframes hero-in { from { opacity: 0; transform: translateY(22px); } }
+@keyframes stage-in-mobile { from { opacity: 0; transform: translateY(14px); } }
 @keyframes overlay-in { from { opacity: 0; } }
 @keyframes dialog-in { from { opacity: 0; transform: translateY(18px) scale(.985); } }
 @keyframes stage-reveal { from { opacity: 0; clip-path: inset(0 0 100% 0 round 58px); } to { opacity: 1; clip-path: inset(0 round 58px); } }
@@ -1024,7 +1025,7 @@ a { color: inherit; }
   .hero-copy { margin-bottom: 18px; }
   .hero h1 { max-width: none; font-size: clamp(36px, 10.4vw, 43px); line-height: .95; }
   .hero-copy > p { margin-top: 12px; font-size: 15px; line-height: 1.4; }
-  .hero-stage { width: calc(100% + 16px); min-height: auto; margin-left: -8px; padding: 10px; border-radius: 24px; }
+  .hero-stage { width: calc(100% + 16px); min-height: auto; margin-left: -8px; padding: 10px; border-radius: 24px; animation-name: stage-in-mobile; animation-duration: .65s; }
   .relay-panel { width: 100%; grid-template-columns: 1fr; gap: 12px; }
   .relay-picker,
   .relay-summary { min-height: 0; padding: 18px; border-radius: 16px; }
