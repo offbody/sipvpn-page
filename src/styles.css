@@ -1127,8 +1127,8 @@ a { color: inherit; }
   .closing-route-path > span { font-size: 10px; }
   .closing-route-path > span > i { width: 36px; height: 36px; box-shadow: inset 0 0 0 8px var(--paper); }
   .closing-route-foot { align-items: flex-start; flex-direction: column; gap: 4px; }
-  .lead-overlay { padding: 12px 12px 0; place-items: end center; }
-  .lead-dialog { width: 100%; max-height: calc(100svh - 12px); padding: 30px 22px calc(24px + env(safe-area-inset-bottom)); border-radius: 26px 26px 0 0; }
+  .lead-overlay { padding: max(16px, env(safe-area-inset-top)) 12px max(16px, env(safe-area-inset-bottom)); place-items: center; }
+  .lead-dialog { width: 100%; max-height: calc(100svh - 32px); padding: 30px 22px; border-radius: 22px; overscroll-behavior: contain; }
   .lead-close { top: 18px; right: 18px; }
   .lead-heading { padding-right: 44px; }
   .lead-heading h2,
