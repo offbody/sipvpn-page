@@ -97,10 +97,26 @@ function RouteGraphic({ regionIndex }: { regionIndex: number }) {
 
 function RelayPanel({ onLead }: { onLead: OpenLeadForm }) {
   const [regionIndex, setRegionIndex] = useState(0);
+  const [isRegionChanging, setIsRegionChanging] = useState(false);
+  const regionFrame = useRef<number | null>(null);
   const region = regions[regionIndex];
 
+  useEffect(() => () => {
+    if (regionFrame.current) cancelAnimationFrame(regionFrame.current);
+  }, []);
+
+  const selectRegion = (index: number) => {
+    if (index === regionIndex) return;
+    if (regionFrame.current) cancelAnimationFrame(regionFrame.current);
+    setIsRegionChanging(true);
+    setRegionIndex(index);
+    regionFrame.current = requestAnimationFrame(() => {
+      regionFrame.current = requestAnimationFrame(() => setIsRegionChanging(false));
+    });
+  };
+
   return (
-    <div className="relay-panel" data-ui>
+    <div className={`relay-panel ${isRegionChanging ? 'is-changing' : ''}`} data-ui>
       <div className="relay-picker">
         <div className="relay-head">
           <div>
@@ -115,7 +131,7 @@ function RelayPanel({ onLead }: { onLead: OpenLeadForm }) {
               key={item.id}
               className={index === regionIndex ? 'is-active' : ''}
               type="button"
-              onClick={() => setRegionIndex(index)}
+              onClick={() => selectRegion(index)}
               aria-pressed={index === regionIndex}
             >
               {item.label}
@@ -180,7 +196,7 @@ function MiniFragment({ kind }: { kind: (typeof features)[number]['kind'] }) {
           ['103 · Отдел продаж', 'Менеджер', 'В сети'],
           ['117 · Поддержка', 'Оператор', 'В сети'],
           ['204 · Бухгалтерия', 'Участник', 'Пауза'],
-        ].map((row) => <div className="team-row" key={row[0]}>{row.map((cell) => <span key={cell}>{cell}</span>)}</div>)}
+        ].map((row) => <div className="team-row" key={row[0]}>{row.map((cell, index) => <span className={index === 2 ? `team-status ${cell === 'Пауза' ? 'is-paused' : ''}` : undefined} key={cell}>{cell}</span>)}</div>)}
       </div>
     );
   }
