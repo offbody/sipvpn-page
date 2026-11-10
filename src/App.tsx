@@ -1,5 +1,34 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import type { FormEvent } from 'react';
 import { faq, features, nav, plans, regions } from './content';
+
+type OpenLeadForm = (source: string) => void;
+type ContactMethod = 'phone' | 'telegram' | 'whatsapp' | 'max' | 'instagram';
+
+const contactMethods: Record<ContactMethod, { label: string; field: string; placeholder: string; phone: boolean }> = {
+  phone: { label: 'Телефон', field: 'Номер телефона', placeholder: '+375 (29) 000-00-00', phone: true },
+  telegram: { label: 'Telegram', field: 'Ник в Telegram', placeholder: '@username', phone: false },
+  whatsapp: { label: 'WhatsApp', field: 'Телефон в WhatsApp', placeholder: '+375 (29) 000-00-00', phone: true },
+  max: { label: 'Max', field: 'Телефон в Max', placeholder: '+7 (999) 000-00-00', phone: true },
+  instagram: { label: 'Instagram', field: 'Ник в Instagram', placeholder: '@username', phone: false },
+};
+
+function formatPhone(value: string) {
+  const digits = value.replace(/\D/g, '').slice(0, 15);
+  if (!digits) return '';
+
+  if (digits.startsWith('375')) {
+    const parts = [digits.slice(0, 3), digits.slice(3, 5), digits.slice(5, 8), digits.slice(8, 10), digits.slice(10, 12)].filter(Boolean);
+    return `+${parts[0]}${parts[1] ? ` (${parts[1]})` : ''}${parts[2] ? ` ${parts[2]}` : ''}${parts[3] ? `-${parts[3]}` : ''}${parts[4] ? `-${parts[4]}` : ''}`;
+  }
+
+  if (digits.startsWith('7') || digits.startsWith('8')) {
+    const local = digits.slice(1, 11);
+    return `+7${local ? ` (${local.slice(0, 3)}` : ''}${local.length >= 3 ? ')' : ''}${local.length > 3 ? ` ${local.slice(3, 6)}` : ''}${local.length > 6 ? `-${local.slice(6, 8)}` : ''}${local.length > 8 ? `-${local.slice(8, 10)}` : ''}`;
+  }
+
+  return `+${digits.replace(/(\d{3})(?=\d)/g, '$1 ').trim()}`;
+}
 
 function Logo({ inverse = false }: { inverse?: boolean }) {
   return (
@@ -10,7 +39,7 @@ function Logo({ inverse = false }: { inverse?: boolean }) {
   );
 }
 
-function Header() {
+function Header({ onLead }: { onLead: OpenLeadForm }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -24,7 +53,7 @@ function Header() {
           </a>
         ))}
       </nav>
-      <a className="button button--dark header-cta" href="#pricing">Попробовать бесплатно</a>
+      <button className="button button--dark header-cta" type="button" onClick={() => onLead('Шапка сайта')}>Попробовать бесплатно</button>
       <button
         className="menu-button"
         type="button"
@@ -66,7 +95,7 @@ function RouteGraphic({ regionIndex }: { regionIndex: number }) {
   );
 }
 
-function RelayPanel() {
+function RelayPanel({ onLead }: { onLead: OpenLeadForm }) {
   const [regionIndex, setRegionIndex] = useState(0);
   const region = regions[regionIndex];
 
@@ -104,7 +133,7 @@ function RelayPanel() {
           <strong>{region.label} → {region.node}</strong>
         </div>
         <div className="relay-actions">
-          <a className="button button--dark" href="#pricing">Попробовать бесплатно</a>
+          <button className="button button--dark" type="button" onClick={() => onLead(`Маршрут: ${region.label} → ${region.node}`)}>Попробовать бесплатно</button>
           <a className="text-link" href="#how">Как это работает</a>
         </div>
         <span className="relay-note">14 дней бесплатно · карта не нужна · настройка за 5 минут</span>
@@ -174,7 +203,7 @@ function MiniFragment({ kind }: { kind: (typeof features)[number]['kind'] }) {
   );
 }
 
-function Hero() {
+function Hero({ onLead }: { onLead: OpenLeadForm }) {
   return (
     <>
       <section className="hero">
@@ -183,7 +212,7 @@ function Hero() {
           <p>SipVPN даёт российский IP-выход для SIP-телефонии и CRM, когда вы работаете за рубежом.</p>
         </div>
         <div className="hero-stage" aria-label="Интерактивный маршрут SipVPN">
-          <RelayPanel />
+          <RelayPanel onLead={onLead} />
         </div>
       </section>
 
@@ -277,7 +306,7 @@ function Security() {
   );
 }
 
-function Pricing() {
+function Pricing({ onLead }: { onLead: OpenLeadForm }) {
   const [selected, setSelected] = useState(1);
   const plan = plans[selected];
 
@@ -310,7 +339,7 @@ function Pricing() {
           <div className="plan-stage-name"><span>Вы выбрали</span><strong>{plan.name}</strong></div>
           <div className="plan-price"><strong>{plan.price}</strong><span>{plan.period}</span></div>
           <p>{plan.summary}</p>
-          <a className="button" href="#contact">{plan.button}</a>
+          <button className="button" type="button" onClick={() => onLead(`Тариф: ${plan.name}`)}>{plan.button}</button>
         </div>
       </div>
     </section>
@@ -335,7 +364,7 @@ function Faq() {
   );
 }
 
-function Closing() {
+function Closing({ onLead }: { onLead: OpenLeadForm }) {
   return (
     <section className="closing section" id="contact">
       <div className="section-shell closing-inner">
@@ -343,7 +372,7 @@ function Closing() {
           <h2>Попробуйте SipVPN</h2>
           <p>14 дней бесплатно. Карта не нужна. Настройка занимает около пяти минут.</p>
           <div className="closing-actions">
-            <a className="button button--dark" href="#pricing">Попробовать бесплатно</a>
+            <button className="button button--dark" type="button" onClick={() => onLead('Финальный экран')}>Попробовать бесплатно</button>
             <a className="text-link" href="#how">Как это работает</a>
           </div>
         </div>
@@ -359,13 +388,13 @@ function Closing() {
   );
 }
 
-function Footer() {
+function Footer({ onLead }: { onLead: OpenLeadForm }) {
   return (
     <footer className="footer">
       <div className="footer-shell">
         <div className="footer-top">
           <div className="footer-brand"><Logo inverse /><p>Российский SIP relay для связи из любой страны.</p></div>
-          <a className="footer-action" href="#pricing"><span>Попробовать бесплатно</span><b aria-hidden="true">↗</b></a>
+          <button className="footer-action" type="button" onClick={() => onLead('Подвал сайта')}><span>Попробовать бесплатно</span><b aria-hidden="true">↗</b></button>
         </div>
         <div className="footer-directory">
           <span>© 2026 SipVPN</span>
@@ -378,20 +407,163 @@ function Footer() {
   );
 }
 
+function LeadForm({ open, source, onClose }: { open: boolean; source: string; onClose: () => void }) {
+  const [name, setName] = useState('');
+  const [method, setMethod] = useState<ContactMethod>('phone');
+  const [contact, setContact] = useState('');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [error, setError] = useState('');
+  const nameInput = useRef<HTMLInputElement>(null);
+  const methodMeta = contactMethods[method];
+
+  useEffect(() => {
+    if (!open) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    window.setTimeout(() => nameInput.current?.focus(), 80);
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [open, onClose]);
+
+  const changeMethod = (nextMethod: ContactMethod) => {
+    setMethod(nextMethod);
+    setContact('');
+    setError('');
+    setStatus('idle');
+  };
+
+  const submit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setError('');
+
+    const cleanName = name.trim();
+    const cleanContact = contact.trim();
+    if (cleanName.length < 2) {
+      setError('Укажите имя, чтобы мы знали, как к вам обратиться.');
+      return;
+    }
+
+    if (methodMeta.phone && cleanContact.replace(/\D/g, '').length < 7) {
+      setError('Проверьте номер телефона — в нём не хватает цифр.');
+      return;
+    }
+
+    if (!methodMeta.phone && cleanContact.replace(/^@/, '').length < 2) {
+      setError(`Укажите корректный ник в ${methodMeta.label}.`);
+      return;
+    }
+
+    setStatus('sending');
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/hello@somedesigner.me', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          Имя: cleanName,
+          'Способ связи': methodMeta.label,
+          Контакт: cleanContact,
+          Источник: source,
+          _subject: `Новая заявка SipVPN — ${cleanName}`,
+          _template: 'table',
+          _honey: '',
+        }),
+      });
+
+      if (!response.ok) throw new Error('FormSubmit request failed');
+      setStatus('success');
+      setName('');
+      setContact('');
+    } catch {
+      setStatus('error');
+      setError('Не получилось отправить заявку. Попробуйте ещё раз через минуту.');
+    }
+  };
+
+  if (!open) return null;
+
+  return (
+    <div className="lead-overlay" role="presentation" onMouseDown={(event) => event.target === event.currentTarget && onClose()}>
+      <div className="lead-dialog" role="dialog" aria-modal="true" aria-labelledby="lead-title">
+        <button className="lead-close" type="button" onClick={onClose} aria-label="Закрыть форму"><span /><span /></button>
+        {status === 'success' ? (
+          <div className="lead-success" aria-live="polite">
+            <span aria-hidden="true">✓</span>
+            <h2 id="lead-title">Заявка отправлена</h2>
+            <p>Свяжемся с вами выбранным способом и поможем настроить SipVPN.</p>
+            <button className="button button--dark" type="button" onClick={onClose}>Закрыть</button>
+          </div>
+        ) : (
+          <>
+            <div className="lead-heading">
+              <span>Быстрая заявка</span>
+              <h2 id="lead-title">Начните с бесплатных 14 дней</h2>
+              <p>Оставьте удобный контакт. Мы поможем выбрать маршрут и подключиться.</p>
+            </div>
+            <form className="lead-form" onSubmit={submit}>
+              <label>
+                <span>Ваше имя</span>
+                <input ref={nameInput} name="name" value={name} onChange={(event) => setName(event.target.value)} placeholder="Как к вам обращаться" autoComplete="name" required />
+              </label>
+              <label>
+                <span>Как с вами связаться</span>
+                <select name="contact_method" value={method} onChange={(event) => changeMethod(event.target.value as ContactMethod)}>
+                  {Object.entries(contactMethods).map(([value, item]) => <option key={value} value={value}>{item.label}</option>)}
+                </select>
+              </label>
+              <label className="lead-contact">
+                <span>{methodMeta.field}</span>
+                <input
+                  name="contact"
+                  type={methodMeta.phone ? 'tel' : 'text'}
+                  inputMode={methodMeta.phone ? 'tel' : 'text'}
+                  autoComplete={methodMeta.phone ? 'tel' : 'off'}
+                  value={contact}
+                  onChange={(event) => setContact(methodMeta.phone ? formatPhone(event.target.value) : event.target.value)}
+                  placeholder={methodMeta.placeholder}
+                  required
+                />
+              </label>
+              {error && <p className="lead-error" role="alert">{error}</p>}
+              <button className="button button--dark lead-submit" type="submit" disabled={status === 'sending'}>
+                {status === 'sending' ? 'Отправляем…' : 'Отправить заявку'}
+              </button>
+              <p className="lead-note">Используем контакт только для связи по вашей заявке.</p>
+            </form>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
+  const [leadSource, setLeadSource] = useState('');
+  const openLeadForm = useCallback((source: string) => setLeadSource(source), []);
+  const closeLeadForm = useCallback(() => setLeadSource(''), []);
+
   return (
     <>
-      <Header />
+      <Header onLead={openLeadForm} />
       <main id="top">
-        <Hero />
+        <Hero onLead={openLeadForm} />
         <HowItWorks />
         <Features />
         <Security />
-        <Pricing />
+        <Pricing onLead={openLeadForm} />
         <Faq />
-        <Closing />
+        <Closing onLead={openLeadForm} />
       </main>
-      <Footer />
+      <Footer onLead={openLeadForm} />
+      <LeadForm open={Boolean(leadSource)} source={leadSource} onClose={closeLeadForm} />
     </>
   );
 }

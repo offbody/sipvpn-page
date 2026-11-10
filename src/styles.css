@@ -37,7 +37,8 @@ body {
 }
 
 button,
-input { font: inherit; }
+input,
+select { font: inherit; }
 
 a { color: inherit; }
 
@@ -823,7 +824,7 @@ a { color: inherit; }
 .footer-top { padding-bottom: 64px; display: grid; grid-template-columns: 1fr minmax(280px, 420px); gap: 24px; align-items: stretch; }
 .footer-brand { min-height: 220px; display: flex; flex-direction: column; justify-content: space-between; padding: 32px 0; }
 .footer-brand p { max-width: 360px; margin: 0; color: #d3d0df; font-size: 18px; }
-.footer-action { min-height: 220px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; border-radius: 24px; background: var(--lime); color: var(--ink); font-size: 27px; line-height: 1.1; font-weight: 700; text-decoration: none; transition: transform .22s ease; }
+.footer-action { min-height: 220px; padding: 30px; border: 0; display: flex; flex-direction: column; justify-content: space-between; background: var(--lime); color: var(--ink); border-radius: 24px; font: inherit; font-size: 27px; line-height: 1.1; font-weight: 700; text-align: left; text-decoration: none; cursor: pointer; transition: transform .22s ease; }
 .footer-action:hover { transform: translateY(-2px); }
 .footer-action b { align-self: end; font-size: 46px; font-weight: 400; transition: transform .2s ease; }
 .footer-action:hover b { transform: translate(4px, -4px); }
@@ -835,7 +836,105 @@ a { color: inherit; }
 .footer-directory > a:hover { color: #fff; }
 .footer-wordmark { min-height: 270px; display: grid; place-items: end center; overflow: hidden; color: #fff; font-size: clamp(110px, 17vw, 238px); font-weight: 700; line-height: .78; letter-spacing: -.075em; }
 
+.lead-overlay {
+  position: fixed;
+  z-index: 200;
+  inset: 0;
+  padding: 24px;
+  display: grid;
+  place-items: center;
+  background: rgba(25, 25, 40, .58);
+  backdrop-filter: blur(12px);
+  animation: overlay-in .2s ease both;
+}
+
+.lead-dialog {
+  position: relative;
+  width: min(560px, 100%);
+  max-height: calc(100svh - 48px);
+  padding: 36px;
+  overflow-y: auto;
+  background: var(--paper);
+  border: 1px solid rgba(32, 35, 59, .1);
+  border-radius: 30px;
+  box-shadow: 0 32px 90px rgba(19, 20, 35, .24);
+  animation: dialog-in .28s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.lead-dialog::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 9px;
+  background: linear-gradient(90deg, var(--lavender) 0 42%, var(--peach) 42% 70%, var(--lime) 70%);
+}
+
+.lead-close {
+  position: absolute;
+  z-index: 1;
+  top: 22px;
+  right: 22px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--soft);
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.lead-close:hover { background: var(--lavender); transform: rotate(4deg); }
+.lead-close:active { transform: scale(.96); }
+.lead-close span { position: absolute; top: 21px; left: 13px; width: 18px; height: 2px; background: var(--ink); }
+.lead-close span:first-child { transform: rotate(45deg); }
+.lead-close span:last-child { transform: rotate(-45deg); }
+
+.lead-heading { padding-right: 52px; }
+.lead-heading > span { color: var(--muted); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+.lead-heading h2,
+.lead-success h2 { margin: 12px 0 0; font-size: clamp(34px, 4vw, 48px); line-height: 1; letter-spacing: -.045em; }
+.lead-heading p,
+.lead-success p { margin: 18px 0 0; color: var(--muted); font-size: 17px; line-height: 1.45; }
+
+.lead-form { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px 14px; }
+.lead-form label { display: grid; gap: 8px; }
+.lead-form label > span { font-size: 13px; font-weight: 700; }
+.lead-form input,
+.lead-form select {
+  width: 100%;
+  height: 54px;
+  padding: 0 15px;
+  border: 1px solid #d8d7d1;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 16px;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.lead-form input::placeholder { color: #9798a2; }
+.lead-form input:focus,
+.lead-form select:focus { border-color: var(--ink); box-shadow: 0 0 0 3px rgba(201, 237, 111, .55); }
+.lead-contact,
+.lead-error,
+.lead-submit,
+.lead-note { grid-column: 1 / -1; }
+.lead-error { margin: -2px 0 0; color: #a5222b; font-size: 14px; }
+.lead-submit { width: 100%; margin-top: 2px; }
+.lead-submit:disabled { cursor: wait; opacity: .65; transform: none; }
+.lead-note { margin: -4px 0 0; color: var(--muted); font-size: 12px; text-align: center; }
+
+.lead-success { min-height: 390px; padding: 42px 18px 12px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+.lead-success > span { width: 58px; height: 58px; display: grid; place-items: center; background: var(--lime); border-radius: 50%; font-size: 28px; font-weight: 700; }
+.lead-success .button { margin-top: 30px; }
+
 @keyframes hero-in { from { opacity: 0; transform: translateY(22px); } }
+@keyframes overlay-in { from { opacity: 0; } }
+@keyframes dialog-in { from { opacity: 0; transform: translateY(18px) scale(.985); } }
 @keyframes stage-reveal { from { opacity: 0; clip-path: inset(0 0 100% 0 round 58px); } to { opacity: 1; clip-path: inset(0 round 58px); } }
 @keyframes stage-reveal-flat-bottom { from { opacity: 0; clip-path: inset(0 0 100% 0 round 58px 58px 0 0); } to { opacity: 1; clip-path: inset(0 round 58px 58px 0 0); } }
 @keyframes signal-pulse { 50% { opacity: .35; transform: scale(.72); } }
@@ -991,6 +1090,20 @@ a { color: inherit; }
   .closing-route-path > span { font-size: 10px; }
   .closing-route-path > span > i { width: 36px; height: 36px; box-shadow: inset 0 0 0 8px var(--paper); }
   .closing-route-foot { align-items: flex-start; flex-direction: column; gap: 4px; }
+  .lead-overlay { padding: 12px 12px 0; place-items: end center; }
+  .lead-dialog { width: 100%; max-height: calc(100svh - 12px); padding: 30px 22px calc(24px + env(safe-area-inset-bottom)); border-radius: 26px 26px 0 0; }
+  .lead-close { top: 18px; right: 18px; }
+  .lead-heading { padding-right: 44px; }
+  .lead-heading h2,
+  .lead-success h2 { font-size: 34px; }
+  .lead-heading p,
+  .lead-success p { font-size: 16px; }
+  .lead-form { grid-template-columns: 1fr; gap: 16px; }
+  .lead-contact,
+  .lead-error,
+  .lead-submit,
+  .lead-note { grid-column: 1; }
+  .lead-success { min-height: 410px; padding-right: 8px; padding-left: 8px; }
   .footer { padding-top: 48px; }
   .footer-top { padding-bottom: 40px; grid-template-columns: 1fr; }
   .footer-brand { min-height: 150px; padding: 0 0 28px; }
