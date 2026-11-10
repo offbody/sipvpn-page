@@ -287,26 +287,33 @@ function Pricing() {
   return (
     <section className="pricing section" id="pricing">
       <div className="section-shell pricing-layout">
-        <div className="plan-list" role="tablist" aria-label="Тарифы SipVPN">
-          <h2 className="sr-only">Тарифы</h2>
+        <div className="section-heading pricing-heading">
+          <h2>Тарифы SipVPN</h2>
+          <p>Выберите объём работы сейчас. Тариф можно изменить или отменить позже.</p>
+        </div>
+        <div className="plan-deck" role="tablist" aria-label="Тарифы SipVPN">
           {plans.map((item, index) => (
             <button
               key={item.name}
               type="button"
               role="tab"
               aria-selected={selected === index}
-              className={selected === index ? 'is-active' : ''}
+              aria-controls="selected-plan"
+              className={`plan-option plan-option--${index + 1} ${selected === index ? 'is-active' : ''}`}
               onClick={() => setSelected(index)}
             >
-              <i />{item.name}
+              <span className="plan-option-top"><span>0{index + 1}</span><i /></span>
+              <strong>{item.name}</strong>
+              <span className="plan-option-price">{item.price}<small>{item.period}</small></span>
+              <span className="plan-option-copy">{item.summary}</span>
             </button>
           ))}
         </div>
-        <div className="plan-stage" role="tabpanel">
+        <div className="plan-stage" id="selected-plan" role="tabpanel" aria-live="polite">
+          <div className="plan-stage-name"><span>Вы выбрали</span><strong>{plan.name}</strong></div>
           <div className="plan-price"><strong>{plan.price}</strong><span>{plan.period}</span></div>
           <p>{plan.summary}</p>
-          <a className="button button--dark" href="#contact">{plan.button}</a>
-          <span>Тариф можно изменить или отменить в любой момент.</span>
+          <a className="button" href="#contact">{plan.button}</a>
         </div>
       </div>
     </section>
@@ -335,11 +342,20 @@ function Closing() {
   return (
     <section className="closing section" id="contact">
       <div className="section-shell closing-inner">
-        <h2>Попробуйте SipVPN</h2>
-        <p>14 дней бесплатно. Карта не нужна. Настройка занимает около пяти минут.</p>
-        <div className="closing-actions">
-          <a className="button button--dark" href="#pricing">Попробовать бесплатно</a>
-          <a className="text-link" href="#how">Как это работает</a>
+        <div className="closing-copy">
+          <h2>Попробуйте SipVPN</h2>
+          <p>14 дней бесплатно. Карта не нужна. Настройка занимает около пяти минут.</p>
+          <div className="closing-actions">
+            <a className="button button--dark" href="#pricing">Попробовать бесплатно</a>
+            <a className="text-link" href="#how">Как это работает</a>
+          </div>
+        </div>
+        <div className="closing-route" data-ui role="img" aria-label="Маршрут SipVPN от SIP-клиента через российский relay к оператору">
+          <div className="closing-route-head"><span>Подключение SipVPN</span><span className="status"><i /> Готово</span></div>
+          <div className="closing-route-path" aria-hidden="true">
+            <span><i />SIP-клиент</span><b /><span className="is-active"><i />RU relay</span><b /><span><i />Оператор</span>
+          </div>
+          <div className="closing-route-foot"><span>SRTP / DTLS</span><strong>Настройка за 5 минут</strong></div>
         </div>
       </div>
     </section>
