@@ -1,10 +1,27 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { FormEvent } from 'react';
+import type { FormEvent, ReactNode } from 'react';
 import { faq, features, nav, plans, regions } from './content';
 import SpecularButton from './SpecularButton';
 
 type OpenLeadForm = (source: string) => void;
 type ContactMethod = 'phone' | 'telegram' | 'whatsapp' | 'max' | 'instagram';
+
+function MotionScene({ className, children }: { className: string; children: ReactNode }) {
+  const sceneRef = useRef<HTMLDivElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    const scene = sceneRef.current;
+    if (!scene) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const observer = new IntersectionObserver(([entry]) => setIsPlaying(entry.isIntersecting), { threshold: .35 });
+    observer.observe(scene);
+    return () => observer.disconnect();
+  }, []);
+
+  return <div ref={sceneRef} className={`process-scene ${className} ${isPlaying ? 'is-playing' : ''}`} data-ui>{children}</div>;
+}
 
 const contactMethods: Record<ContactMethod, { label: string; field: string; placeholder: string; phone: boolean }> = {
   phone: { label: 'Телефон', field: 'Номер телефона', placeholder: '+375 (29) 000-00-00', phone: true },
@@ -290,31 +307,40 @@ function HowItWorks({ onLead }: { onLead: OpenLeadForm }) {
           <article className="process-card process-card--request">
             <div className="process-card-top"><span>01</span><b>Заявка</b></div>
             <div className="process-copy"><h3>Оставьте заявку</h3><p>Укажите имя и удобный способ связи. Мы уточним маршрут и поможем со стартом.</p></div>
-            <div className="request-preview" data-ui>
-              <div className="request-contact"><span>Ваш контакт</span><strong>Telegram · @username</strong></div>
-              <div className="request-transit" aria-hidden="true"><span>Заявка</span><i /><b>Принята</b></div>
-              <button type="button" onClick={() => onLead('Блок подключения · Шаг 1')}>Оставить заявку <span aria-hidden="true">↗</span></button>
-            </div>
+            <MotionScene className="request-preview">
+              <div className="scene-chrome" aria-hidden="true"><i /><i /><i /><span>Новая заявка</span></div>
+              <div className="request-scene-content">
+                <div className="request-contact"><span>Ваш контакт</span><strong>Telegram · @username</strong></div>
+                <div className="request-transit" aria-hidden="true"><span>Заявка</span><i /><b>Принята</b></div>
+                <button type="button" onClick={() => onLead('Блок подключения · Шаг 1')}>Оставить заявку <span aria-hidden="true">↗</span></button>
+              </div>
+              <div className="request-success" aria-hidden="true"><span>✓</span><div><strong>Заявка принята</strong><small>Готовим маршрут SipVPN</small></div></div>
+            </MotionScene>
           </article>
 
           <article className="process-card process-card--key">
             <div className="process-card-top"><span>02</span><b>Relay-ключ</b></div>
             <div className="process-copy"><h3>Получите ключ</h3><p>Пришлём адрес российского узла и персональные параметры подключения.</p></div>
-            <div className="key-preview" data-ui>
-              <span>Персональный ключ</span>
-              <div className="key-value"><strong>ru-mow-7F3A-82C1</strong><button type="button" className={copied ? 'is-copied' : ''} onClick={copyRelayKey} aria-live="polite">{copied ? 'Готово' : 'Копировать'}</button></div>
-              <div className="key-security"><span><i />Ключ активирован</span><b>SRTP / DTLS</b></div>
-            </div>
+            <MotionScene className="key-preview">
+              <div className="scene-chrome" aria-hidden="true"><i /><i /><i /><span>Relay console</span></div>
+              <div className="key-scene-content">
+                <span>Персональный ключ</span>
+                <div className="key-value"><strong>ru-mow-7F3A-82C1</strong><button type="button" className={copied ? 'is-copied' : ''} onClick={copyRelayKey} aria-live="polite">{copied ? 'Готово' : 'Копировать'}</button></div>
+                <div className="key-security"><span><i />Ключ активирован</span><b>SRTP / DTLS</b></div>
+              </div>
+              <div className="key-loader" aria-hidden="true"><i /><span>Генерируем relay-ключ</span><b><i /></b></div>
+            </MotionScene>
           </article>
 
           <article className="process-card process-card--launch">
             <div className="process-card-top"><span>03</span><b>Первый звонок</b></div>
             <div className="process-copy"><h3>Начните звонить</h3><p>Добавьте ключ в софтфон и работайте как обычно. Тот же маршрут предусмотрен для будущего подключения CRM.</p></div>
-            <div className="launch-preview" data-ui>
-              <div className="launch-head"><span>Голосовой канал</span><span className="status"><i /> В сети</span></div>
+            <MotionScene className="launch-preview">
+              <div className="scene-chrome" aria-hidden="true"><i /><i /><i /><span>Softphone</span></div>
+              <div className="launch-head"><span>Голосовой канал</span><span className="launch-status" aria-label="Статус: в сети"><i aria-hidden="true" /><b className="is-pending" aria-hidden="true">Соединяем</b><b className="is-online" aria-hidden="true">В сети</b></span></div>
               <div className="call-wave" aria-hidden="true">{[8, 14, 20, 12, 24, 17, 10, 19, 13, 8].map((height, index) => <i key={index} style={{ height }} />)}</div>
               <div className="launch-foot"><div><strong>00:07</strong><span>Первый звонок</span></div><b>168 мс</b></div>
-            </div>
+            </MotionScene>
           </article>
         </div>
       </div>
