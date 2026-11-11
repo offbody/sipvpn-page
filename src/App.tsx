@@ -260,7 +260,7 @@ function Hero({ onLead }: { onLead: OpenLeadForm }) {
   );
 }
 
-function HowItWorks() {
+function HowItWorks({ onLead }: { onLead: OpenLeadForm }) {
   const [copied, setCopied] = useState(false);
   const copiedTimer = useRef<number | null>(null);
 
@@ -279,35 +279,43 @@ function HowItWorks() {
     }
   };
 
-  const rows = [
-    {
-      title: 'Добавьте SIP-аккаунт',
-      text: 'Укажите данные вашего провайдера в кабинете SipVPN.',
-      fragment: <div className="setup-card" data-ui><label>Адрес сервера<input value="sip.provider.ru" readOnly /></label><label>Логин<input value="74951234567" readOnly /></label><button type="button">Сохранить аккаунт</button></div>,
-    },
-    {
-      title: 'Получите ключ relay',
-      text: 'Сервис подготовит адрес узла и параметры подключения.',
-      fragment: <div className="key-card" data-ui><span>Ключ подключения</span><strong>ru-mow-7F3A-82C1</strong><button type="button" className={copied ? 'is-copied' : ''} onClick={copyRelayKey} aria-live="polite">{copied ? 'Скопировано' : 'Копировать'}</button></div>,
-    },
-    {
-      title: 'Звоните как обычно',
-      text: 'Софтфон регистрируется через российский IP. Номер, приложение и рабочий сценарий не меняются.',
-      fragment: <div className="ready-card" data-ui><div className="ready-signal"><i /><i /><i /></div><div><strong>Готово к звонкам</strong><span>Zoiper · Москва relay · 168 мс</span></div><span className="status"><i /> В сети</span></div>,
-    },
-  ];
-
   return (
     <section className="how section" id="how">
       <div className="section-shell">
-        <div className="section-heading"><h2>Подключение за пять минут</h2><p>Три действия, и SIP снова работает за границей.</p></div>
-        <div className="how-list">
-          {rows.map((row, index) => (
-            <article className="how-row" key={row.title}>
-              <div className="how-copy"><span className="step-number">0{index + 1}</span><h3>{row.title}</h3><p>{row.text}</p></div>
-              {row.fragment}
-            </article>
-          ))}
+        <div className="section-heading how-heading">
+          <div><span className="how-kicker">Простой старт</span><h2>Подключение за пять минут</h2></div>
+          <div className="how-heading-copy"><span className="how-time"><i />≈ 5 минут</span><p>Оставьте заявку, получите персональный relay-ключ и начните звонить.</p></div>
+        </div>
+        <div className="activation-flow">
+          <article className="process-card process-card--request">
+            <div className="process-card-top"><span>01</span><b>Заявка</b></div>
+            <div className="process-copy"><h3>Оставьте заявку</h3><p>Укажите имя и удобный способ связи. Мы уточним маршрут и поможем со стартом.</p></div>
+            <div className="request-preview" data-ui>
+              <div className="request-contact"><span>Ваш контакт</span><strong>Telegram · @username</strong></div>
+              <div className="request-transit" aria-hidden="true"><span>Заявка</span><i /><b>Принята</b></div>
+              <button type="button" onClick={() => onLead('Блок подключения · Шаг 1')}>Оставить заявку <span aria-hidden="true">↗</span></button>
+            </div>
+          </article>
+
+          <article className="process-card process-card--key">
+            <div className="process-card-top"><span>02</span><b>Relay-ключ</b></div>
+            <div className="process-copy"><h3>Получите ключ</h3><p>Пришлём адрес российского узла и персональные параметры подключения.</p></div>
+            <div className="key-preview" data-ui>
+              <span>Персональный ключ</span>
+              <div className="key-value"><strong>ru-mow-7F3A-82C1</strong><button type="button" className={copied ? 'is-copied' : ''} onClick={copyRelayKey} aria-live="polite">{copied ? 'Готово' : 'Копировать'}</button></div>
+              <div className="key-security"><span><i />Ключ активирован</span><b>SRTP / DTLS</b></div>
+            </div>
+          </article>
+
+          <article className="process-card process-card--launch">
+            <div className="process-card-top"><span>03</span><b>Первый звонок</b></div>
+            <div className="process-copy"><h3>Начните звонить</h3><p>Добавьте ключ в софтфон и работайте как обычно. Тот же маршрут предусмотрен для будущего подключения CRM.</p></div>
+            <div className="launch-preview" data-ui>
+              <div className="launch-head"><span>Голосовой канал</span><span className="status"><i /> В сети</span></div>
+              <div className="call-wave" aria-hidden="true">{[8, 14, 20, 12, 24, 17, 10, 19, 13, 8].map((height, index) => <i key={index} style={{ height }} />)}</div>
+              <div className="launch-foot"><div><strong>00:07</strong><span>Первый звонок</span></div><b>168 мс</b></div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -609,7 +617,7 @@ export default function App() {
       <Header />
       <main id="top">
         <Hero onLead={openLeadForm} />
-        <HowItWorks />
+        <HowItWorks onLead={openLeadForm} />
         <Features />
         <Security />
         <Pricing onLead={openLeadForm} />
