@@ -334,7 +334,7 @@ function HowItWorks({ onLead }: { onLead: OpenLeadForm }) {
 
           <article className="process-card process-card--launch">
             <div className="process-card-top"><span>03</span><b>Первый звонок</b></div>
-            <div className="process-copy"><h3>Начните звонить</h3><p>Добавьте ключ в софтфон и работайте как обычно. Тот же маршрут предусмотрен для будущего подключения CRM.</p></div>
+            <div className="process-copy"><h3>Начните звонить</h3><p>Используйте ключ для подключения к серверу SipVPN и начинайте общаться бесплатно.</p></div>
             <MotionScene className="launch-preview">
               <div className="scene-chrome" aria-hidden="true"><i /><i /><i /><span>Softphone</span></div>
               <div className="launch-head"><span>Голосовой канал</span><span className="launch-status" aria-label="Статус: в сети"><i aria-hidden="true" /><b className="is-pending" aria-hidden="true">Соединяем</b><b className="is-online" aria-hidden="true">В сети</b></span></div>
