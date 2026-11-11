@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { FormEvent } from 'react';
 import { faq, features, nav, plans, regions } from './content';
+import SpecularButton from './SpecularButton';
 
 type OpenLeadForm = (source: string) => void;
 type ContactMethod = 'phone' | 'telegram' | 'whatsapp' | 'max' | 'instagram';
@@ -169,7 +170,7 @@ function RelayPanel({ onLead }: { onLead: OpenLeadForm }) {
           <div><dt>Российский IP:</dt><dd>Активен</dd></div>
         </dl>
         <div className="relay-summary-action">
-          <button className="button button--dark" type="button" onClick={() => onLead(`Маршрут: ${region.label} → ${region.node}`)}>Подключить SipVPN бесплатно</button>
+          <SpecularButton type="button" onClick={() => onLead(`Маршрут: ${region.label} → ${region.node}`)}>Подключить SipVPN бесплатно</SpecularButton>
           <span>14 дней бесплатно · карта не нужна</span>
         </div>
       </div>
