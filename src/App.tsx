@@ -259,6 +259,10 @@ function Hero({ onLead }: { onLead: OpenLeadForm }) {
           <p>SipVPN даёт российский IP-выход для SIP-телефонии и CRM, когда вы работаете за рубежом.</p>
         </div>
         <div className="hero-stage" aria-label="Интерактивный маршрут SipVPN">
+          <div className="hero-characters" aria-hidden="true">
+            <img className="hero-character hero-character--female" src="/illustrations/sipvpn-female.png" alt="" />
+            <img className="hero-character hero-character--male" src="/illustrations/sipvpn-male.png" alt="" />
+          </div>
           <RelayPanel onLead={onLead} />
         </div>
       </section>
