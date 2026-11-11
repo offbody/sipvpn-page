@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { FormEvent, ReactNode } from 'react';
 import { faq, features, nav, plans, regions } from './content';
-import SpecularButton from './SpecularButton';
+import SpecularButton, { SpecularLink } from './SpecularButton';
 
 type OpenLeadForm = (source: string) => void;
 type ContactMethod = 'phone' | 'telegram' | 'whatsapp' | 'max' | 'instagram';
@@ -72,7 +72,7 @@ function Header() {
         ))}
         <a className="nav-mobile-cta" href="#how" onClick={() => setOpen(false)}>Как это работает?</a>
       </nav>
-      <a className="button header-cta header-how" href="#how">Как это работает?</a>
+      <SpecularLink className="header-cta header-how" variant="light" href="#how">Как это работает?</SpecularLink>
       <button
         className={`menu-button ${open ? 'is-open' : ''}`}
         type="button"
@@ -295,7 +295,10 @@ function HowItWorks({ onLead }: { onLead: OpenLeadForm }) {
       <div className="section-shell">
         <div className="section-heading how-heading">
           <div><span className="how-kicker">Простой старт</span><h2>Подключение за пять минут</h2></div>
-          <div className="how-heading-copy"><span className="how-time"><i />≈ 5 минут</span><p>Оставьте заявку, получите персональный relay-ключ и начните звонить.</p></div>
+          <div className="how-heading-copy">
+            <p>Оставьте заявку, получите персональный реферальный ключ.</p>
+            <SpecularButton variant="outline" type="button" onClick={() => onLead('Заголовок блока подключения')}>Подключить бесплатно</SpecularButton>
+          </div>
         </div>
         <div className="activation-flow">
           <article className="process-card process-card--request">
@@ -371,7 +374,7 @@ function Security() {
         <div className="security-copy">
           <h2>Голос защищён</h2>
           <p>Трафик защищён шифрованием и изолирован в выделенном контуре. Маршрут контролируется от клиента до российского relay.</p>
-          <a className="button button--light" href="#faq">Вопросы о безопасности</a>
+          <SpecularLink variant="light" href="#faq">Вопросы о безопасности</SpecularLink>
         </div>
         <div className="security-console" data-ui>
           <div className="console-head"><span>Защита соединения</span><span className="status status--light"><i /> Активна</span></div>
@@ -399,29 +402,39 @@ function Pricing({ onLead }: { onLead: OpenLeadForm }) {
           <h2>Тарифы SipVPN</h2>
           <p>Выберите объём работы сейчас. Тариф можно изменить или отменить позже.</p>
         </div>
-        <div className="plan-deck" role="tablist" aria-label="Тарифы SipVPN">
-          {plans.map((item, index) => (
-            <button
-              key={item.name}
-              type="button"
-              role="tab"
-              aria-selected={selected === index}
-              aria-controls="selected-plan"
-              className={`plan-option plan-option--${index + 1} ${selected === index ? 'is-active' : ''}`}
-              onClick={() => setSelected(index)}
-            >
-              <span className="plan-option-top"><span>0{index + 1}</span><i /></span>
-              <strong>{item.name}</strong>
-              <span className="plan-option-price">{item.price}<small>{item.period}</small></span>
-              <span className="plan-option-copy">{item.summary}</span>
-            </button>
-          ))}
-        </div>
-        <div className="plan-stage" id="selected-plan" role="tabpanel" aria-live="polite">
-          <div className="plan-stage-name"><span>Вы выбрали</span><strong>{plan.name}</strong></div>
-          <div className="plan-price"><strong>{plan.price}</strong><span>{plan.period}</span></div>
-          <p>{plan.summary}</p>
-          <button className="button" type="button" onClick={() => onLead(`Тариф: ${plan.name}`)}>{plan.button}</button>
+        <div className="pricing-console">
+          <div className="plan-picker">
+            <div className="plan-picker-head"><span className="ui-label">Конфигуратор тарифа</span><h3>Выберите план</h3></div>
+            <div className="plan-deck" role="tablist" aria-label="Тарифы SipVPN">
+              {plans.map((item, index) => (
+                <button
+                  id={`plan-tab-${index}`}
+                  key={item.name}
+                  type="button"
+                  role="tab"
+                  aria-selected={selected === index}
+                  aria-controls="selected-plan"
+                  aria-label={`${item.name}, ${item.price}${item.period}. ${item.summary}`}
+                  className={`plan-option plan-option--${index + 1} ${selected === index ? 'is-active' : ''}`}
+                  onClick={() => setSelected(index)}
+                >
+                  <span className="plan-option-index">0{index + 1}</span>
+                  <span className="plan-option-name"><strong>{item.name}</strong><small>{item.price}{item.period}</small></span>
+                  <i aria-hidden="true" />
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="plan-stage" id="selected-plan" role="tabpanel" aria-live="polite" aria-labelledby={`plan-tab-${selected}`}>
+            <div className="plan-stage-top"><span className="ui-label">Вы выбрали:</span><span>Тариф можно изменить</span></div>
+            <div className="plan-stage-name"><strong>{plan.name}</strong></div>
+            <div className="plan-price"><strong>{plan.price}</strong><span>{plan.period}</span></div>
+            <p>{plan.summary}</p>
+            <div className="plan-stage-action">
+              <SpecularButton type="button" onClick={() => onLead(`Тариф: ${plan.name}`)}>{plan.button}</SpecularButton>
+              <span>14 дней бесплатно · карта не нужна</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -454,7 +467,7 @@ function Closing({ onLead }: { onLead: OpenLeadForm }) {
           <h2>Попробуйте SipVPN</h2>
           <p>14 дней бесплатно. Карта не нужна. Настройка занимает около пяти минут.</p>
           <div className="closing-actions">
-            <button className="button button--dark" type="button" onClick={() => onLead('Финальный экран')}>Попробовать бесплатно</button>
+            <SpecularButton type="button" onClick={() => onLead('Финальный экран')}>Попробовать бесплатно</SpecularButton>
             <a className="text-link" href="#how">Как это работает</a>
           </div>
         </div>
@@ -581,7 +594,7 @@ function LeadForm({ open, source, onClose }: { open: boolean; source: string; on
             <span aria-hidden="true">✓</span>
             <h2 id="lead-title">Заявка отправлена</h2>
             <p>Свяжемся с вами выбранным способом и поможем настроить SipVPN.</p>
-            <button className="button button--dark" type="button" onClick={onClose}>Закрыть</button>
+            <SpecularButton type="button" onClick={onClose}>Закрыть</SpecularButton>
           </div>
         ) : (
           <>
@@ -615,9 +628,9 @@ function LeadForm({ open, source, onClose }: { open: boolean; source: string; on
                 />
               </label>
               {error && <p className="lead-error" role="alert">{error}</p>}
-              <button className="button button--dark lead-submit" type="submit" disabled={status === 'sending'}>
+              <SpecularButton className="lead-submit" type="submit" disabled={status === 'sending'}>
                 {status === 'sending' ? 'Отправляем…' : 'Отправить заявку'}
-              </button>
+              </SpecularButton>
               <p className="lead-note">Используем контакт только для связи по вашей заявке.</p>
             </form>
           </>
