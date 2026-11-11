@@ -184,7 +184,6 @@ a { color: inherit; }
   max-width: 980px;
   margin: 0 auto 28px;
   text-align: center;
-  animation: hero-in .7s var(--ease-out) both;
 }
 
 .hero h1 {
@@ -195,6 +194,20 @@ a { color: inherit; }
   letter-spacing: -.06em;
 }
 
+.hero-title-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: .08em;
+  margin-bottom: -.08em;
+}
+
+.hero-title-line > span {
+  display: block;
+  animation: hero-line-in 700ms var(--ease-out) both;
+}
+
+.hero-title-line:nth-child(2) > span { animation-delay: 70ms; }
+
 .hero-copy > p {
   max-width: 660px;
   margin: 18px auto 0;
@@ -202,6 +215,7 @@ a { color: inherit; }
   font-size: clamp(18px, 1.35vw, 20px);
   line-height: 1.42;
   text-wrap: pretty;
+  animation: hero-lead-in 520ms var(--ease-out) 320ms both;
 }
 
 .hero-stage {
@@ -210,7 +224,8 @@ a { color: inherit; }
   background: var(--lavender);
   border-radius: 42px;
   overflow: hidden;
-  animation: stage-reveal .85s var(--ease-out) .08s both;
+  transform-origin: 50% 100%;
+  animation: hero-stage-in 900ms var(--ease-out) 80ms both;
 }
 
 .relay-panel {
@@ -278,6 +293,8 @@ a { color: inherit; }
   animation: signal-pulse 1.8s var(--ease-in-out) infinite;
 }
 
+.relay-head .status i { animation-delay: 1s; }
+
 .status-short,
 .nav-mobile-cta { display: none; }
 
@@ -313,7 +330,7 @@ a { color: inherit; }
   inset: 0;
   background: linear-gradient(90deg, transparent 0 35%, rgba(255,255,255,.9) 50%, transparent 65% 100%);
   transform: translateX(-100%);
-  animation: route-sweep 2.8s linear infinite;
+  animation: route-sweep 2.8s linear 1s infinite;
 }
 
 .route-dot { display: none; }
@@ -339,12 +356,9 @@ a { color: inherit; }
 .route-stop--active > span:first-child { background: var(--lime); }
 .route-stop strong { font-size: 15px; }
 .route-stop small { margin-top: 3px; color: var(--muted); font-size: 13px; }
-.route-graphic,
-.relay-summary > h2,
-.relay-summary-list { transition: opacity var(--duration-ui) var(--ease-out), transform var(--duration-ui) var(--ease-out); }
-.relay-panel.is-changing .route-graphic,
-.relay-panel.is-changing .relay-summary > h2,
-.relay-panel.is-changing .relay-summary-list { opacity: .4; transform: translateY(4px); transition-duration: 0ms; }
+.relay-panel.has-region-change .route-graphic,
+.relay-panel.has-region-change .relay-summary > h2,
+.relay-panel.has-region-change .relay-summary-list { animation: region-content-in 240ms var(--ease-out) both; }
 
 .route-icon { display: grid; place-items: center; color: var(--navy); }
 .route-icon svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
@@ -991,9 +1005,10 @@ a { color: inherit; }
   .lead-close:hover { transform: rotate(4deg); }
 }
 
-@keyframes hero-in { from { opacity: 0; transform: translateY(22px); } }
-@keyframes stage-in-mobile { from { opacity: 0; transform: translateY(14px); } }
-@keyframes route-node-in { from { opacity: 0; transform: translateY(8px) scale(.92); } }
+@keyframes hero-line-in { from { transform: translateY(110%); } }
+@keyframes hero-lead-in { from { opacity: 0; transform: translateY(12px); } }
+@keyframes hero-stage-in { from { transform: translateY(8px) scale(.985); } }
+@keyframes region-content-in { from { opacity: .55; transform: translateY(5px); } }
 @keyframes sip-packet-one {
   0%, 8% { opacity: 0; transform: translateX(0); }
   14% { opacity: 1; }
@@ -1068,8 +1083,6 @@ a { color: inherit; }
 }
 @keyframes overlay-in { from { opacity: 0; } }
 @keyframes dialog-in { from { opacity: 0; transform: translateY(18px) scale(.985); } }
-@keyframes stage-reveal { from { opacity: 0; clip-path: inset(0 0 100% 0 round 58px); } to { opacity: 1; clip-path: inset(0 round 58px); } }
-@keyframes stage-reveal-flat-bottom { from { opacity: 0; clip-path: inset(0 0 100% 0 round 58px 58px 0 0); } to { opacity: 1; clip-path: inset(0 round 58px 58px 0 0); } }
 @keyframes signal-pulse { 50% { opacity: .35; transform: scale(.72); } }
 @keyframes route-sweep { to { transform: translateX(100%); } }
 @keyframes mini-route { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
@@ -1096,7 +1109,6 @@ a { color: inherit; }
   .hero-stage {
     min-height: 0;
     border-radius: 42px;
-    animation-name: stage-reveal;
   }
 }
 
@@ -1148,7 +1160,7 @@ a { color: inherit; }
   .hero-copy { margin-bottom: 18px; }
   .hero h1 { max-width: none; font-size: clamp(36px, 10.4vw, 43px); line-height: .95; }
   .hero-copy > p { margin-top: 12px; font-size: 15px; line-height: 1.4; }
-  .hero-stage { width: calc(100% + 16px); min-height: auto; margin-left: -8px; padding: 10px; border-radius: 24px; animation-name: stage-in-mobile; animation-duration: .65s; }
+  .hero-stage { width: calc(100% + 16px); min-height: auto; margin-left: -8px; padding: 10px; border-radius: 24px; }
   .relay-panel { width: 100%; grid-template-columns: 1fr; gap: 12px; }
   .relay-picker,
   .relay-summary { min-height: 0; padding: 18px; border-radius: 16px; }
@@ -1168,18 +1180,14 @@ a { color: inherit; }
   .route-line::after { display: none; }
   .route-dot { position: absolute; top: 50%; left: 0; width: 50%; height: 0; display: block; opacity: 0; will-change: transform, opacity; }
   .route-dot::after { content: ""; position: absolute; top: 0; left: 0; width: 9px; height: 9px; border: 2px solid #fff; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 3px rgba(201, 237, 111, .25), 0 2px 8px rgba(32, 35, 59, .2); transform: translate(-50%, -50%); }
-  .route-dot--one { animation: sip-packet-one 3.2s var(--ease-in-out) .35s infinite; }
-  .route-dot--two { left: 50%; animation: sip-packet-two 3.2s var(--ease-in-out) .35s infinite; }
-  .route-stop { animation: route-node-in .5s var(--ease-out) both; }
-  .route-stop:nth-of-type(2) { animation-delay: .08s; }
-  .route-stop:nth-of-type(3) { animation-delay: .22s; }
-  .route-stop:nth-of-type(4) { animation-delay: .36s; }
+  .route-dot--one { animation: sip-packet-one 3.2s var(--ease-in-out) 1.05s infinite; }
+  .route-dot--two { left: 50%; animation: sip-packet-two 3.2s var(--ease-in-out) 1.05s infinite; }
   .route-stop > span:first-child { width: 42px; height: 42px; margin-bottom: 6px; }
   .route-stop--active > span:first-child { box-shadow: 0 0 0 7px rgba(201, 237, 111, .18); }
-  .route-stop--active > span:first-child::after { content: ""; position: absolute; inset: -5px; border: 2px solid var(--lime); border-radius: 50%; opacity: 0; animation: relay-confirm 3.2s var(--ease-out) .35s infinite; }
-  .route-stop--active .route-signal i { transform-origin: bottom; animation: relay-bars 1.2s var(--ease-in-out) infinite; }
-  .route-stop--active .route-signal i:nth-child(2) { animation-delay: -.4s; }
-  .route-stop--active .route-signal i:nth-child(3) { animation-delay: -.8s; }
+  .route-stop--active > span:first-child::after { content: ""; position: absolute; inset: -5px; border: 2px solid var(--lime); border-radius: 50%; opacity: 0; animation: relay-confirm 3.2s var(--ease-out) 1.05s infinite; }
+  .route-stop--active .route-signal i { transform-origin: bottom; animation: relay-bars 1.2s var(--ease-in-out) 1s infinite; }
+  .route-stop--active .route-signal i:nth-child(2) { animation-delay: 1.12s; }
+  .route-stop--active .route-signal i:nth-child(3) { animation-delay: 1.24s; }
   .route-stop strong { font-size: 11px; }
   .route-stop small { font-size: 10px; }
   .relay-summary > h2 { margin-top: 8px; font-size: 27px; }
@@ -1337,8 +1345,12 @@ a { color: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .hero-copy,
+  .hero-title-line > span,
+  .hero-copy > p,
   .hero-stage,
+  .relay-panel.has-region-change .route-graphic,
+  .relay-panel.has-region-change .relay-summary > h2,
+  .relay-panel.has-region-change .relay-summary-list,
   .lead-overlay,
   .lead-dialog { animation: reduced-fade 200ms ease both !important; }
   .route-line::after,

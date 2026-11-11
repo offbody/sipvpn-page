@@ -129,26 +129,17 @@ function RouteGraphic({ regionIndex }: { regionIndex: number }) {
 
 function RelayPanel({ onLead }: { onLead: OpenLeadForm }) {
   const [regionIndex, setRegionIndex] = useState(0);
-  const [isRegionChanging, setIsRegionChanging] = useState(false);
-  const regionFrame = useRef<number | null>(null);
+  const [hasRegionChanged, setHasRegionChanged] = useState(false);
   const region = regions[regionIndex];
-
-  useEffect(() => () => {
-    if (regionFrame.current) cancelAnimationFrame(regionFrame.current);
-  }, []);
 
   const selectRegion = (index: number) => {
     if (index === regionIndex) return;
-    if (regionFrame.current) cancelAnimationFrame(regionFrame.current);
-    setIsRegionChanging(true);
+    setHasRegionChanged(true);
     setRegionIndex(index);
-    regionFrame.current = requestAnimationFrame(() => {
-      regionFrame.current = requestAnimationFrame(() => setIsRegionChanging(false));
-    });
   };
 
   return (
-    <div className={`relay-panel ${isRegionChanging ? 'is-changing' : ''}`} data-ui>
+    <div className={`relay-panel ${hasRegionChanged ? 'has-region-change' : ''}`} data-ui>
       <div className="relay-picker">
         <div className="relay-head">
           <div>
@@ -178,10 +169,10 @@ function RelayPanel({ onLead }: { onLead: OpenLeadForm }) {
         </label>
         <RouteGraphic key={region.id} regionIndex={regionIndex} />
       </div>
-      <div className="relay-summary">
+      <div className="relay-summary" aria-live="polite">
         <span className="ui-label">Выбрано:</span>
-        <h2>{region.label} <span aria-hidden="true">→</span> {region.node}</h2>
-        <dl className="relay-summary-list">
+        <h2 key={`title-${region.id}`}>{region.label} <span aria-hidden="true">→</span> {region.node}</h2>
+        <dl className="relay-summary-list" key={`facts-${region.id}`}>
           <div><dt>Задержка:</dt><dd>{region.latency}</dd></div>
           <div><dt>Протокол:</dt><dd>SRTP / DTLS</dd></div>
           <div><dt>Российский IP:</dt><dd>Активен</dd></div>
@@ -259,9 +250,12 @@ function MiniFragment({ kind }: { kind: (typeof features)[number]['kind'] }) {
 function Hero({ onLead }: { onLead: OpenLeadForm }) {
   return (
     <>
-      <section className="hero">
-        <div className="hero-copy" data-enter>
-          <h1>Звонки в Россию<br />из любой страны</h1>
+      <section className="hero" data-enter>
+        <div className="hero-copy">
+          <h1>
+            <span className="hero-title-line"><span>Звонки в Россию</span></span>
+            <span className="hero-title-line"><span>из любой страны</span></span>
+          </h1>
           <p>SipVPN даёт российский IP-выход для SIP-телефонии и CRM, когда вы работаете за рубежом.</p>
         </div>
         <div className="hero-stage" aria-label="Интерактивный маршрут SipVPN">
